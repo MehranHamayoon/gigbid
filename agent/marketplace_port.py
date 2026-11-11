@@ -1,0 +1,6 @@
+from typing import Any, Protocol
+
+
+class MarketplacePort(Protocol):
+    async def read(self, tool: str, arguments: dict[str, Any]) -> Any: ...
+    async def write(self, tool: str, arguments: dict[str, Any]) -> dict: ...
