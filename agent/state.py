@@ -11,6 +11,7 @@ class GigBidState(TypedDict, total=False):
     weekly_limit: int
     filters: str
     strategy: str
+    include_attested_skills: bool
     job: dict[str, Any]
     job_spec: dict[str, Any]
     risk_report: dict[str, Any]
@@ -33,3 +34,4 @@ class GigBidState(TypedDict, total=False):
     steps: Annotated[int, add]
     tokens: Annotated[int, add]
     event_stats: Annotated[list[dict], add]
+

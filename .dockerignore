@@ -1,0 +1,9 @@
+.git
+.state
+.env
+**/node_modules
+**/__pycache__
+**/dist
+**/playwright-report
+**/test-results
+**/.pytest_cache

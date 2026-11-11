@@ -18,7 +18,8 @@ def verify_claims(draft: str, evidence: list[dict], title: str = "") -> list[dic
         if source:
             asserted = claim[:citation.start()].strip().removeprefix("Portfolio evidence: ").rstrip(".")
             excerpt = source["text"].strip().rstrip(".")
-            if asserted == excerpt:
+            skills = f'Portfolio skills: {", ".join(source["skills"])}'
+            if asserted in {excerpt, skills}:
                 status = "supported"
             elif asserted and asserted in excerpt:
                 status = "partly_supported"
@@ -41,4 +42,5 @@ def verify_claims(draft: str, evidence: list[dict], title: str = "") -> list[dic
 def filter_claims(text, checks):
     remove = {row["text"] for row in checks if row["status"] != "supported"}
     return "\n\n".join(line for line in sentences(text) if line not in remove)
+
 

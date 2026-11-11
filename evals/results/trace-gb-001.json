@@ -1,0 +1,147 @@
+{
+  "job_id": "GB-001",
+  "trace_id": "014ff543cc2e4d28bb2016cebfe79a18",
+  "events": [
+    {
+      "node": "scout",
+      "duration_ms": 139.423,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "analyst",
+      "duration_ms": 0.062,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "risk_assessor",
+      "duration_ms": 155.234,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "fit_matcher",
+      "duration_ms": 154.988,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "decision",
+      "duration_ms": 0.051,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "pricing",
+      "duration_ms": 147.845,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "writer",
+      "duration_ms": 0.092,
+      "tokens": 0,
+      "usd": 0,
+      "model": "extractive"
+    },
+    {
+      "node": "verifier",
+      "duration_ms": 0.047,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "critic",
+      "duration_ms": 0.022,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "revise",
+      "duration_ms": 0.019,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "writer",
+      "duration_ms": 0.059,
+      "tokens": 0,
+      "usd": 0,
+      "model": "extractive"
+    },
+    {
+      "node": "verifier",
+      "duration_ms": 0.065,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "critic",
+      "duration_ms": 0.033,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "compliance",
+      "duration_ms": 0.132,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "preview",
+      "duration_ms": 36.858,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "human_approval",
+      "duration_ms": 0.042,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "review_edit",
+      "duration_ms": 33.115,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "dispatch",
+      "duration_ms": 118.503,
+      "tokens": 0,
+      "usd": 0
+    }
+  ],
+  "decision": {
+    "action": "bid",
+    "reason": "3 requirements have portfolio evidence. Risk is within policy."
+  },
+  "risk": {
+    "score": 0.12,
+    "flags": [],
+    "explanation": "Payment is verified and no configured risk rule matched."
+  },
+  "outcome": {
+    "status": "applied",
+    "connects": 6,
+    "payload": {
+      "job_id": "GB-001",
+      "text": "Project: Build a churn prediction baseline\n\nPortfolio evidence: Compared logistic regression and random forest with a held-out split and reported precision and recall. [ai-1-case]\n\nPortfolio skills: Python, scikit-learn, classification [ai-1-case]\n\nI propose to deliver a reproducible baseline and a documented handoff.",
+      "amount": 330
+    },
+    "stage": "replied"
+  },
+  "claim_verification": [
+    {
+      "text": "Portfolio evidence: Compared logistic regression and random forest with a held-out split and reported precision and recall. [ai-1-case]",
+      "status": "supported",
+      "evidence_id": "ai-1-case"
+    },
+    {
+      "text": "Portfolio skills: Python, scikit-learn, classification [ai-1-case]",
+      "status": "supported",
+      "evidence_id": "ai-1-case"
+    }
+  ]
+}

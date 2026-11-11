@@ -1,0 +1,90 @@
+name: gigbid
+x-service: &service
+  build:
+    context: ..
+    dockerfile: Dockerfile
+  image: gigbid:local
+  restart: unless-stopped
+  volumes:
+    - state:/var/lib/gigbid
+  environment: &service-env
+    GIGBID_STATE_DIR: /var/lib/gigbid
+    APP_SECRET_KEY: ${APP_SECRET_KEY:?Add APP_SECRET_KEY to .env}
+    GIGBID_INTERNAL_TOKEN: ${GIGBID_INTERNAL_TOKEN:?Add GIGBID_INTERNAL_TOKEN to .env}
+    GIGBID_DEMO_ACCESS: ${GIGBID_DEMO_ACCESS:-1}
+    GIGBID_EMBEDDED_WORKER: "0"
+    REVIEWER_EMAIL: ${REVIEWER_EMAIL:-}
+    REVIEWER_PASSWORD: ${REVIEWER_PASSWORD:-}
+    MARKETPLACE_MODE: ${MARKETPLACE_MODE:-gigsim}
+    GIGSIM_BASE_URL: http://gigsim:8000
+    GIGBID_MARKETPLACE_MCP_URL: http://marketplace:8000/mcp
+    GIGBID_PORTFOLIO_MCP_URL: http://portfolio:8000/mcp
+    GIGBID_WORKSPACE_MCP_URL: http://workspace:8000/mcp
+    DATABASE_URL: postgresql://gigbid:${POSTGRES_PASSWORD:?Add POSTGRES_PASSWORD to .env}@postgres:5432/gigbid
+    REDIS_URL: redis://redis:6379/0
+    OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-}
+    MODEL_PROFILE: ${MODEL_PROFILE:-open}
+    UPWORK_CLIENT_ID: ${UPWORK_CLIENT_ID:-}
+    UPWORK_CLIENT_SECRET: ${UPWORK_CLIENT_SECRET:-}
+    UPWORK_AUTHORIZE_URL: ${UPWORK_AUTHORIZE_URL:-}
+    UPWORK_TOKEN_URL: ${UPWORK_TOKEN_URL:-}
+    UPWORK_REDIRECT_URI: ${UPWORK_REDIRECT_URI:-}
+    UPWORK_TOOL_MAP: ${UPWORK_TOOL_MAP:-}
+    LANGSMITH_TRACING: ${LANGSMITH_TRACING:-false}
+    LANGSMITH_API_KEY: ${LANGSMITH_API_KEY:-}
+
+services:
+  api:
+    <<: *service
+    ports: ["8000:8000"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+  worker:
+    <<: *service
+    command: ["arq", "worker.main.WorkerSettings"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      api:
+        condition: service_started
+  portfolio:
+    <<: *service
+    command: ["uvicorn","mcp_servers.http:portfolio","--factory","--host","0.0.0.0","--port","8000"]
+  marketplace:
+    <<: *service
+    command: ["uvicorn","mcp_servers.http:marketplace","--factory","--host","0.0.0.0","--port","8000"]
+  workspace:
+    <<: *service
+    command: ["uvicorn","mcp_servers.http:workspace","--factory","--host","0.0.0.0","--port","8000"]
+  gigsim:
+    <<: *service
+    command: ["uvicorn","gigsim.api:app","--host","0.0.0.0","--port","8000"]
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: gigbid
+      POSTGRES_DB: gigbid
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Add POSTGRES_PASSWORD to .env}
+    volumes: ["postgres:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL","pg_isready -U gigbid"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  redis:
+    image: redis:7-alpine
+    volumes: ["redis:/data"]
+  ollama:
+    image: ollama/ollama:0.17.7
+    volumes: ["ollama:/root/.ollama"]
+    profiles: ["models"]
+volumes:
+  state:
+  postgres:
+  redis:
+  ollama:

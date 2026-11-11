@@ -1,5 +1,5 @@
-from functools import lru_cache
 import os
+from functools import lru_cache
 
 from agent.settings import settings
 from rag.index.ranking import body, tokens

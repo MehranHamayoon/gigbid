@@ -1,0 +1,1082 @@
+[
+  {
+    "profile": "fine",
+    "request": "find work for case 1",
+    "expected": "search_jobs",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "find work for case 1",
+    "expected": "search_jobs",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "find work for case 1",
+    "expected": "search_jobs",
+    "selected": "search_evidence",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "discover projects for case 2",
+    "expected": "search_jobs",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "discover projects for case 2",
+    "expected": "search_jobs",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "discover projects for case 2",
+    "expected": "search_jobs",
+    "selected": "search_jobs",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "search jobs for case 3",
+    "expected": "search_jobs",
+    "selected": "search_jobs",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "search jobs for case 3",
+    "expected": "search_jobs",
+    "selected": "marketplace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "search jobs for case 3",
+    "expected": "search_jobs",
+    "selected": "search_jobs",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "job feed for case 4",
+    "expected": "search_jobs",
+    "selected": "get_job",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "job feed for case 4",
+    "expected": "search_jobs",
+    "selected": "marketplace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "job feed for case 4",
+    "expected": "search_jobs",
+    "selected": "search_jobs",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "open posting for case 5",
+    "expected": "get_job",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "open posting for case 5",
+    "expected": "get_job",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "open posting for case 5",
+    "expected": "get_job",
+    "selected": "get_job",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "inspect brief for case 6",
+    "expected": "get_job",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "inspect brief for case 6",
+    "expected": "get_job",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "inspect brief for case 6",
+    "expected": "get_job",
+    "selected": "get_job",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "get job for case 7",
+    "expected": "get_job",
+    "selected": "get_job",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "get job for case 7",
+    "expected": "get_job",
+    "selected": "marketplace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "get job for case 7",
+    "expected": "get_job",
+    "selected": "get_job",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "load listing for case 8",
+    "expected": "get_job",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "load listing for case 8",
+    "expected": "get_job",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "load listing for case 8",
+    "expected": "get_job",
+    "selected": "get_job",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "remaining credits for case 9",
+    "expected": "get_connects_balance",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "remaining credits for case 9",
+    "expected": "get_connects_balance",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "remaining credits for case 9",
+    "expected": "get_connects_balance",
+    "selected": "get_connects_balance",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "tokens left for case 10",
+    "expected": "get_connects_balance",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "tokens left for case 10",
+    "expected": "get_connects_balance",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "tokens left for case 10",
+    "expected": "get_connects_balance",
+    "selected": "get_connects_balance",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "get connects balance for case 11",
+    "expected": "get_connects_balance",
+    "selected": "get_connects_balance",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "get connects balance for case 11",
+    "expected": "get_connects_balance",
+    "selected": "marketplace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "get connects balance for case 11",
+    "expected": "get_connects_balance",
+    "selected": "get_connects_balance",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  },
+  {
+    "profile": "fine",
+    "request": "available connects for case 12",
+    "expected": "get_connects_balance",
+    "selected": "get_connects_balance",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "available connects for case 12",
+    "expected": "get_connects_balance",
+    "selected": "marketplace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "available connects for case 12",
+    "expected": "get_connects_balance",
+    "selected": "get_connects_balance",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "buyer reputation for case 13",
+    "expected": "get_client_history",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "buyer reputation for case 13",
+    "expected": "get_client_history",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "buyer reputation for case 13",
+    "expected": "get_client_history",
+    "selected": "get_client_history",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "payment verification for case 14",
+    "expected": "get_client_history",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "payment verification for case 14",
+    "expected": "get_client_history",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "payment verification for case 14",
+    "expected": "get_client_history",
+    "selected": "get_client_history",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "get client history for case 15",
+    "expected": "get_client_history",
+    "selected": "get_client_history",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "get client history for case 15",
+    "expected": "get_client_history",
+    "selected": "marketplace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "get client history for case 15",
+    "expected": "get_client_history",
+    "selected": "get_client_history",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  },
+  {
+    "profile": "fine",
+    "request": "past spend for case 16",
+    "expected": "get_client_history",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "past spend for case 16",
+    "expected": "get_client_history",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "past spend for case 16",
+    "expected": "get_client_history",
+    "selected": "get_client_history",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "incoming replies for case 17",
+    "expected": "list_messages",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "incoming replies for case 17",
+    "expected": "list_messages",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "incoming replies for case 17",
+    "expected": "list_messages",
+    "selected": "list_messages",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "client inbox for case 18",
+    "expected": "list_messages",
+    "selected": "get_client_history",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "client inbox for case 18",
+    "expected": "list_messages",
+    "selected": "marketplace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "client inbox for case 18",
+    "expected": "list_messages",
+    "selected": "list_messages",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "list messages for case 19",
+    "expected": "list_messages",
+    "selected": "list_messages",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "list messages for case 19",
+    "expected": "list_messages",
+    "selected": "marketplace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "list messages for case 19",
+    "expected": "list_messages",
+    "selected": "list_messages",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "show conversations for case 20",
+    "expected": "list_messages",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "show conversations for case 20",
+    "expected": "list_messages",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "show conversations for case 20",
+    "expected": "list_messages",
+    "selected": "list_messages",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "relevant proof for case 21",
+    "expected": "search_evidence",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "relevant proof for case 21",
+    "expected": "search_evidence",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "relevant proof for case 21",
+    "expected": "search_evidence",
+    "selected": "search_evidence",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "matching case studies for case 22",
+    "expected": "search_evidence",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "matching case studies for case 22",
+    "expected": "search_evidence",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "matching case studies for case 22",
+    "expected": "search_evidence",
+    "selected": "search_evidence",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  },
+  {
+    "profile": "fine",
+    "request": "search evidence for case 23",
+    "expected": "search_evidence",
+    "selected": "search_evidence",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "search evidence for case 23",
+    "expected": "search_evidence",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "search evidence for case 23",
+    "expected": "search_evidence",
+    "selected": "search_evidence",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "find past work for case 24",
+    "expected": "search_evidence",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "find past work for case 24",
+    "expected": "search_evidence",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "find past work for case 24",
+    "expected": "search_evidence",
+    "selected": "search_evidence",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  },
+  {
+    "profile": "fine",
+    "request": "read exact excerpt for case 25",
+    "expected": "get_case_study",
+    "selected": "get_case_study",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "read exact excerpt for case 25",
+    "expected": "get_case_study",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "read exact excerpt for case 25",
+    "expected": "get_case_study",
+    "selected": "get_case_study",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  },
+  {
+    "profile": "fine",
+    "request": "inspect citation for case 26",
+    "expected": "get_case_study",
+    "selected": "get_case_study",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "inspect citation for case 26",
+    "expected": "get_case_study",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "inspect citation for case 26",
+    "expected": "get_case_study",
+    "selected": "get_case_study",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "get case study for case 27",
+    "expected": "get_case_study",
+    "selected": "get_case_study",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "get case study for case 27",
+    "expected": "get_case_study",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "get case study for case 27",
+    "expected": "get_case_study",
+    "selected": "get_case_study",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  },
+  {
+    "profile": "fine",
+    "request": "open evidence for case 28",
+    "expected": "get_case_study",
+    "selected": "search_evidence",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "open evidence for case 28",
+    "expected": "get_case_study",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "open evidence for case 28",
+    "expected": "get_case_study",
+    "selected": "get_case_study",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "show capabilities for case 29",
+    "expected": "list_skills",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "show capabilities for case 29",
+    "expected": "list_skills",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "show capabilities for case 29",
+    "expected": "list_skills",
+    "selected": "list_skills",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "inventory competencies for case 30",
+    "expected": "list_skills",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "inventory competencies for case 30",
+    "expected": "list_skills",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "inventory competencies for case 30",
+    "expected": "list_skills",
+    "selected": "list_skills",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "list skills for case 31",
+    "expected": "list_skills",
+    "selected": "list_skills",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "list skills for case 31",
+    "expected": "list_skills",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "list skills for case 31",
+    "expected": "list_skills",
+    "selected": "list_skills",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "attested skills for case 32",
+    "expected": "list_skills",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "attested skills for case 32",
+    "expected": "list_skills",
+    "selected": "portfolio",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "attested skills for case 32",
+    "expected": "list_skills",
+    "selected": "list_skills",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "interview availability for case 33",
+    "expected": "free_calendar_slots",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "interview availability for case 33",
+    "expected": "free_calendar_slots",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "interview availability for case 33",
+    "expected": "free_calendar_slots",
+    "selected": "free_calendar_slots",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "find times for case 34",
+    "expected": "free_calendar_slots",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "find times for case 34",
+    "expected": "free_calendar_slots",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "find times for case 34",
+    "expected": "free_calendar_slots",
+    "selected": "search_evidence",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "free calendar slots for case 35",
+    "expected": "free_calendar_slots",
+    "selected": "free_calendar_slots",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "free calendar slots for case 35",
+    "expected": "free_calendar_slots",
+    "selected": "workspace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "free calendar slots for case 35",
+    "expected": "free_calendar_slots",
+    "selected": "free_calendar_slots",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  },
+  {
+    "profile": "fine",
+    "request": "schedule options for case 36",
+    "expected": "free_calendar_slots",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "schedule options for case 36",
+    "expected": "free_calendar_slots",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "schedule options for case 36",
+    "expected": "free_calendar_slots",
+    "selected": "free_calendar_slots",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "prepare email for case 37",
+    "expected": "create_email_draft",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "coarse",
+    "request": "prepare email for case 37",
+    "expected": "create_email_draft",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 30
+  },
+  {
+    "profile": "described",
+    "request": "prepare email for case 37",
+    "expected": "create_email_draft",
+    "selected": "create_email_draft",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 120
+  },
+  {
+    "profile": "fine",
+    "request": "save unsent message for case 38",
+    "expected": "create_email_draft",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "save unsent message for case 38",
+    "expected": "create_email_draft",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "save unsent message for case 38",
+    "expected": "create_email_draft",
+    "selected": "create_email_draft",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  },
+  {
+    "profile": "fine",
+    "request": "create email draft for case 39",
+    "expected": "create_email_draft",
+    "selected": "create_email_draft",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "create email draft for case 39",
+    "expected": "create_email_draft",
+    "selected": "workspace",
+    "tool_correct": true,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "create email draft for case 39",
+    "expected": "create_email_draft",
+    "selected": "create_email_draft",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  },
+  {
+    "profile": "fine",
+    "request": "compose a note for case 40",
+    "expected": "create_email_draft",
+    "selected": "get_case_study",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "coarse",
+    "request": "compose a note for case 40",
+    "expected": "create_email_draft",
+    "selected": "portfolio",
+    "tool_correct": false,
+    "argument_correct": false,
+    "input_words": 31
+  },
+  {
+    "profile": "described",
+    "request": "compose a note for case 40",
+    "expected": "create_email_draft",
+    "selected": "create_email_draft",
+    "tool_correct": true,
+    "argument_correct": true,
+    "input_words": 121
+  }
+]

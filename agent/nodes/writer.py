@@ -12,13 +12,16 @@ async def writer(state, *, store=None):
     strategy = state.get("strategy", "evidence_first")
     lead = f'Project: {job["title"]}'
     claim = f'Portfolio evidence: {example["text"].strip()} [{example["id"]}]' if example else ""
+    proof = (f'Portfolio skills: {", ".join(example["skills"])} [{example["id"]}]'
+             if example and state.get("include_attested_skills", True) else "")
     plan = "I propose to deliver a reproducible baseline and a documented handoff."
     if store and await store.aget((state["user_id"], "style"), "concise"):
         plan = "I propose to review the requirements with you and agree on acceptance criteria."
-    paragraphs = [lead, claim, plan] if strategy == "evidence_first" or revision else [lead, plan, claim]
+    paragraphs = [lead, claim, proof, plan] if strategy == "evidence_first" or revision else [lead, plan, claim, proof]
     draft = ProposalDraft(job_id=job["id"], cover_letter="\n\n".join(filter(None, paragraphs)),
                           evidence_ids=[example["id"]] if example else [],
                           screening_answers=["I propose to validate the deliverable against agreed acceptance criteria and document the results."
                                              for _ in job["screening_questions"]])
     return {"proposal_draft": draft.model_dump(), "tokens": tokens, "event_stats": [{"model": model}],
             "revision": revision}
+

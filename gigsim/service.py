@@ -1,6 +1,6 @@
 """Transactional marketplace simulator. All records represent fictional activity."""
-from contextlib import closing
 import json
+from contextlib import closing
 
 from agent.settings import ROOT, policy
 from agent.storage import encode, open_db, utc
@@ -12,6 +12,7 @@ def load(name):
 
 JOBS = {row["id"]: row for row in load("simulator_jobs")}
 CLIENTS = {row["id"]: row for row in load("simulator_clients")}
+MARKET_MEDIAN = load("market_statistics")["median"]
 
 
 def search(query: str = "", category: str = "") -> list[dict]:
@@ -86,7 +87,7 @@ def predicted_outcome(job, client, body, amount):
     match = client["preferred_skill"].casefold() in body.casefold()
     eligible = client["payment_verified"] and match and amount <= client["ceiling"]
     tailored = job["title"].casefold() in body.casefold()
-    return "hired" if eligible and tailored and amount <= client["typical_spend"] else "replied" if eligible else "submitted"
+    return "hired" if eligible and tailored and amount < client["typical_spend"] else "replied" if eligible else "submitted"
 
 
 def write(tool, user, trace_id, key, payload, dry_run, weekly_limit):
@@ -139,3 +140,5 @@ def write(tool, user, trace_id, key, payload, dry_run, weekly_limit):
         conn.execute("INSERT INTO audit(created,user_id,trace_id,tool,payload,result) VALUES (?,?,?,?,?,?)",
                      (utc(), user, trace_id, tool, encode(redact(payload)), encode(redact(result))))
         return result
+
+

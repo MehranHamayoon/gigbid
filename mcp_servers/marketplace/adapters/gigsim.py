@@ -35,7 +35,7 @@ def read_local(tool, arguments):
             return service.JOBS[arguments["job_id"]]
         case "get_client_history":
             client = service.CLIENTS[arguments["client_id"]]
-            return {key: value for key, value in client.items() if key not in {"ceiling", "preferred_skill"}}
+            return {**{key: value for key, value in client.items() if key not in {"ceiling", "preferred_skill"}}, "market_fixed_price_median": service.MARKET_MEDIAN}
         case "get_connects_balance":
             return service.balance(arguments["user_id"])
         case "list_messages":
@@ -43,3 +43,4 @@ def read_local(tool, arguments):
         case "list_pipeline":
             return service.proposals(arguments["user_id"])
     raise ValueError(f"Unknown simulator read tool: {tool}")
+

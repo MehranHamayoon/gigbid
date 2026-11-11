@@ -1,0 +1,871 @@
+{
+  "marketplace": {
+    "create_proposal_draft": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": false
+      },
+      "input": {
+        "$defs": {
+          "DraftPayload": {
+            "properties": {
+              "amount": {
+                "default": 0,
+                "maximum": 100000,
+                "minimum": 0,
+                "title": "Amount",
+                "type": "integer"
+              },
+              "job_id": {
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Job Id",
+                "type": "string"
+              },
+              "text": {
+                "maxLength": 5000,
+                "minLength": 12,
+                "title": "Text",
+                "type": "string"
+              }
+            },
+            "required": [
+              "job_id",
+              "text"
+            ],
+            "title": "DraftPayload",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "approval": {
+            "default": "",
+            "title": "Approval",
+            "type": "string"
+          },
+          "dry_run": {
+            "default": true,
+            "title": "Dry Run",
+            "type": "boolean"
+          },
+          "idempotency_key": {
+            "maxLength": 160,
+            "minLength": 12,
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "payload": {
+            "$ref": "#/$defs/DraftPayload"
+          },
+          "trace_id": {
+            "title": "Trace Id",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          },
+          "weekly_limit": {
+            "default": 30,
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Weekly Limit",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "payload",
+          "user_id",
+          "trace_id",
+          "idempotency_key"
+        ],
+        "title": "create_proposal_draftArguments",
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "connects": {
+            "title": "Connects",
+            "type": "integer"
+          },
+          "payload": {
+            "additionalProperties": true,
+            "title": "Payload",
+            "type": "object"
+          },
+          "stage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stage"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "connects",
+          "payload"
+        ],
+        "title": "WriteResult",
+        "type": "object"
+      }
+    },
+    "get_client_history": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "properties": {
+          "client_id": {
+            "title": "Client Id",
+            "type": "string"
+          },
+          "trace_id": {
+            "title": "Trace Id",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "client_id",
+          "user_id",
+          "trace_id"
+        ],
+        "title": "get_client_historyArguments",
+        "type": "object"
+      },
+      "output": null
+    },
+    "get_connects_balance": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "properties": {
+          "trace_id": {
+            "title": "Trace Id",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "trace_id"
+        ],
+        "title": "get_connects_balanceArguments",
+        "type": "object"
+      },
+      "output": null
+    },
+    "get_job": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "properties": {
+          "job_id": {
+            "title": "Job Id",
+            "type": "string"
+          },
+          "trace_id": {
+            "title": "Trace Id",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "job_id",
+          "user_id",
+          "trace_id"
+        ],
+        "title": "get_jobArguments",
+        "type": "object"
+      },
+      "output": null
+    },
+    "list_messages": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "properties": {
+          "job_id": {
+            "default": "",
+            "title": "Job Id",
+            "type": "string"
+          },
+          "trace_id": {
+            "title": "Trace Id",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "trace_id"
+        ],
+        "title": "list_messagesArguments",
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "result": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Result",
+            "type": "array"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "list_messagesOutput",
+        "type": "object"
+      }
+    },
+    "list_pipeline": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "properties": {
+          "trace_id": {
+            "title": "Trace Id",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "trace_id"
+        ],
+        "title": "list_pipelineArguments",
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "result": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Result",
+            "type": "array"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "list_pipelineOutput",
+        "type": "object"
+      }
+    },
+    "search_jobs": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "properties": {
+          "category": {
+            "default": "",
+            "title": "Category",
+            "type": "string"
+          },
+          "query": {
+            "default": "",
+            "title": "Query",
+            "type": "string"
+          },
+          "trace_id": {
+            "title": "Trace Id",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "trace_id"
+        ],
+        "title": "search_jobsArguments",
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "result": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Result",
+            "type": "array"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "search_jobsOutput",
+        "type": "object"
+      }
+    },
+    "send_message": {
+      "annotations": {
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "readOnlyHint": false
+      },
+      "input": {
+        "$defs": {
+          "DraftPayload": {
+            "properties": {
+              "amount": {
+                "default": 0,
+                "maximum": 100000,
+                "minimum": 0,
+                "title": "Amount",
+                "type": "integer"
+              },
+              "job_id": {
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Job Id",
+                "type": "string"
+              },
+              "text": {
+                "maxLength": 5000,
+                "minLength": 12,
+                "title": "Text",
+                "type": "string"
+              }
+            },
+            "required": [
+              "job_id",
+              "text"
+            ],
+            "title": "DraftPayload",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "approval": {
+            "default": "",
+            "title": "Approval",
+            "type": "string"
+          },
+          "dry_run": {
+            "default": true,
+            "title": "Dry Run",
+            "type": "boolean"
+          },
+          "idempotency_key": {
+            "maxLength": 160,
+            "minLength": 12,
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "payload": {
+            "$ref": "#/$defs/DraftPayload"
+          },
+          "trace_id": {
+            "title": "Trace Id",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          },
+          "weekly_limit": {
+            "default": 30,
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Weekly Limit",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "payload",
+          "user_id",
+          "trace_id",
+          "idempotency_key"
+        ],
+        "title": "send_messageArguments",
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "connects": {
+            "title": "Connects",
+            "type": "integer"
+          },
+          "payload": {
+            "additionalProperties": true,
+            "title": "Payload",
+            "type": "object"
+          },
+          "stage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stage"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "connects",
+          "payload"
+        ],
+        "title": "WriteResult",
+        "type": "object"
+      }
+    },
+    "submit_proposal": {
+      "annotations": {
+        "destructiveHint": true,
+        "idempotentHint": true,
+        "readOnlyHint": false
+      },
+      "input": {
+        "$defs": {
+          "DraftPayload": {
+            "properties": {
+              "amount": {
+                "default": 0,
+                "maximum": 100000,
+                "minimum": 0,
+                "title": "Amount",
+                "type": "integer"
+              },
+              "job_id": {
+                "maxLength": 100,
+                "minLength": 1,
+                "title": "Job Id",
+                "type": "string"
+              },
+              "text": {
+                "maxLength": 5000,
+                "minLength": 12,
+                "title": "Text",
+                "type": "string"
+              }
+            },
+            "required": [
+              "job_id",
+              "text"
+            ],
+            "title": "DraftPayload",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "approval": {
+            "default": "",
+            "title": "Approval",
+            "type": "string"
+          },
+          "dry_run": {
+            "default": true,
+            "title": "Dry Run",
+            "type": "boolean"
+          },
+          "idempotency_key": {
+            "maxLength": 160,
+            "minLength": 12,
+            "title": "Idempotency Key",
+            "type": "string"
+          },
+          "payload": {
+            "$ref": "#/$defs/DraftPayload"
+          },
+          "trace_id": {
+            "title": "Trace Id",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          },
+          "weekly_limit": {
+            "default": 30,
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Weekly Limit",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "payload",
+          "user_id",
+          "trace_id",
+          "idempotency_key"
+        ],
+        "title": "submit_proposalArguments",
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "connects": {
+            "title": "Connects",
+            "type": "integer"
+          },
+          "payload": {
+            "additionalProperties": true,
+            "title": "Payload",
+            "type": "object"
+          },
+          "stage": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Stage"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "connects",
+          "payload"
+        ],
+        "title": "WriteResult",
+        "type": "object"
+      }
+    }
+  },
+  "portfolio": {
+    "get_case_study": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "persona": {
+            "default": "ai",
+            "title": "Persona",
+            "type": "string"
+          },
+          "tenant": {
+            "default": "",
+            "title": "Tenant",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "title": "get_case_studyArguments",
+        "type": "object"
+      },
+      "output": null
+    },
+    "list_skills": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "properties": {
+          "persona": {
+            "default": "ai",
+            "title": "Persona",
+            "type": "string"
+          },
+          "tenant": {
+            "default": "",
+            "title": "Tenant",
+            "type": "string"
+          }
+        },
+        "title": "list_skillsArguments",
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "result": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Result",
+            "type": "array"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "list_skillsOutput",
+        "type": "object"
+      }
+    },
+    "search_evidence": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "$defs": {
+          "Filters": {
+            "properties": {
+              "persona": {
+                "default": "ai",
+                "title": "Persona",
+                "type": "string"
+              },
+              "skills": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Skills",
+                "type": "array"
+              },
+              "tenant": {
+                "default": "",
+                "title": "Tenant",
+                "type": "string"
+              },
+              "type": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Type"
+              },
+              "variant": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Variant"
+              }
+            },
+            "title": "Filters",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "filters": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/Filters"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "k": {
+            "default": 5,
+            "maximum": 20,
+            "minimum": 1,
+            "title": "K",
+            "type": "integer"
+          },
+          "requirement": {
+            "maxLength": 3000,
+            "minLength": 1,
+            "title": "Requirement",
+            "type": "string"
+          }
+        },
+        "required": [
+          "requirement"
+        ],
+        "title": "search_evidenceArguments",
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "result": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Result",
+            "type": "array"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "search_evidenceOutput",
+        "type": "object"
+      }
+    }
+  },
+  "workspace": {
+    "create_email_draft": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": false
+      },
+      "input": {
+        "properties": {
+          "body": {
+            "title": "Body",
+            "type": "string"
+          },
+          "subject": {
+            "title": "Subject",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "subject",
+          "body"
+        ],
+        "title": "create_email_draftArguments",
+        "type": "object"
+      },
+      "output": null
+    },
+    "create_tentative_hold": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": false
+      },
+      "input": {
+        "properties": {
+          "start": {
+            "title": "Start",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id",
+          "start",
+          "title"
+        ],
+        "title": "create_tentative_holdArguments",
+        "type": "object"
+      },
+      "output": null
+    },
+    "free_calendar_slots": {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "input": {
+        "properties": {
+          "user_id": {
+            "title": "User Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "user_id"
+        ],
+        "title": "free_calendar_slotsArguments",
+        "type": "object"
+      },
+      "output": {
+        "properties": {
+          "result": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Result",
+            "type": "array"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "free_calendar_slotsOutput",
+        "type": "object"
+      }
+    }
+  }
+}

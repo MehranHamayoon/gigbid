@@ -27,11 +27,12 @@ async def pricing(state):
     balance = await invoke("pricing", "marketplace", "get_connects_balance", **context)
     low = max(job["budget_min"], state["floor"])
     high = job["budget_max"]
-    target = int(round((0.65 * client["typical_spend"] + 0.35 * (low + high) / 2) / 5) * 5)
+    target = int(round((0.65 * client["typical_spend"] + 0.30 * (low + high) / 2 + 0.05 * client.get("market_fixed_price_median", low)) / 5) * 5)
     quote = PriceQuote(amount=max(low, min(high, target)), low=low, high=high, connects=job["connects"],
-                       rationale=f'Uses the posted ${low}–${high} band and client history (${client["typical_spend"]} typical).')
+                       rationale=f'Uses the posted ${low}–${high} band and client history (${client["typical_spend"]} typical), and a small historical market prior.')
     response = {"price_quote": quote.model_dump()}
     if job["connects"] > min(balance["remaining"], state["weekly_limit"] - balance["week_spent"]):
         response.update(decision=BidDecision(action="watch", reason="The weekly or available Connects budget is too low.").model_dump(),
                         approval_status="watch")
     return response
+

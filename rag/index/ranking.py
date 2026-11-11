@@ -1,7 +1,7 @@
+import re
 from collections import Counter
 from functools import lru_cache
 from math import log, sqrt
-import re
 
 
 @lru_cache(maxsize=32768)

@@ -1,7 +1,7 @@
+import os
 from base64 import urlsafe_b64encode
 from contextlib import closing
 from hashlib import sha256
-import os
 
 from cryptography.fernet import Fernet
 

@@ -1,0 +1,712 @@
+{
+  "mode": "Local deterministic simulator; metrics are not instructor GigSim or hidden tests",
+  "summary": {
+    "jobs": 60,
+    "bid": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "scam": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "price_in_band": 1,
+    "submitted": 24,
+    "reply_rate": 1,
+    "hire_rate": 0.75,
+    "analysis_ms_p50": 206.0591,
+    "analysis_ms_p95": 546.499,
+    "proposal_ms_p50": 755.4892,
+    "proposal_ms_p95": 826.9251,
+    "unsupported_before": 0,
+    "unsupported_after": 0,
+    "tokens": 0,
+    "usd": 0
+  },
+  "excerpt_only": {
+    "jobs": 24,
+    "bid": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "scam": {
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "price_in_band": 1,
+    "submitted": 24,
+    "reply_rate": 0,
+    "hire_rate": 0,
+    "analysis_ms_p50": 427.5467,
+    "analysis_ms_p95": 484.7172,
+    "proposal_ms_p50": 650.6636,
+    "proposal_ms_p95": 716.937,
+    "unsupported_before": 0,
+    "unsupported_after": 0,
+    "tokens": 0,
+    "usd": 0
+  },
+  "rag": {
+    "v0/ai": {
+      "n": 20,
+      "recall5": 0.675,
+      "mrr": 1.0,
+      "ndcg10": 0.744,
+      "ms": 0.4076
+    },
+    "v0/all": {
+      "n": 60,
+      "recall5": 0.675,
+      "mrr": 1.0,
+      "ndcg10": 0.7772,
+      "ms": 0.3826
+    },
+    "v0/data": {
+      "n": 20,
+      "recall5": 0.6,
+      "mrr": 1.0,
+      "ndcg10": 0.7876,
+      "ms": 0.3663
+    },
+    "v0/injection": {
+      "n": 12,
+      "recall5": 0.7083,
+      "mrr": 1.0,
+      "ndcg10": 0.7968,
+      "ms": 0.3524
+    },
+    "v0/partial_fit": {
+      "n": 12,
+      "recall5": 0.625,
+      "mrr": 1.0,
+      "ndcg10": 0.7728,
+      "ms": 0.3574
+    },
+    "v0/pilot": {
+      "n": 12,
+      "recall5": 0.625,
+      "mrr": 1.0,
+      "ndcg10": 0.7544,
+      "ms": 0.3539
+    },
+    "v0/scam": {
+      "n": 12,
+      "recall5": 0.5833,
+      "mrr": 1.0,
+      "ndcg10": 0.7181,
+      "ms": 0.3494
+    },
+    "v0/standard": {
+      "n": 12,
+      "recall5": 0.8333,
+      "mrr": 1.0,
+      "ndcg10": 0.8442,
+      "ms": 0.5
+    },
+    "v0/web": {
+      "n": 20,
+      "recall5": 0.75,
+      "mrr": 1.0,
+      "ndcg10": 0.8002,
+      "ms": 0.3739
+    },
+    "v1/ai": {
+      "n": 20,
+      "recall5": 0.875,
+      "mrr": 0.7854,
+      "ndcg10": 0.7831,
+      "ms": 0.3544
+    },
+    "v1/all": {
+      "n": 60,
+      "recall5": 0.8667,
+      "mrr": 0.8544,
+      "ndcg10": 0.82,
+      "ms": 0.3373
+    },
+    "v1/data": {
+      "n": 20,
+      "recall5": 0.9,
+      "mrr": 0.8222,
+      "ndcg10": 0.7995,
+      "ms": 0.3264
+    },
+    "v1/injection": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 0.9167,
+      "ndcg10": 0.8994,
+      "ms": 0.3457
+    },
+    "v1/partial_fit": {
+      "n": 12,
+      "recall5": 0.5,
+      "mrr": 0.6053,
+      "ndcg10": 0.5533,
+      "ms": 0.3543
+    },
+    "v1/pilot": {
+      "n": 12,
+      "recall5": 0.9583,
+      "mrr": 0.9167,
+      "ndcg10": 0.8729,
+      "ms": 0.3493
+    },
+    "v1/scam": {
+      "n": 12,
+      "recall5": 0.875,
+      "mrr": 0.9167,
+      "ndcg10": 0.8425,
+      "ms": 0.3463
+    },
+    "v1/standard": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 0.9167,
+      "ndcg10": 0.932,
+      "ms": 0.2907
+    },
+    "v1/web": {
+      "n": 20,
+      "recall5": 0.825,
+      "mrr": 0.9556,
+      "ndcg10": 0.8775,
+      "ms": 0.331
+    },
+    "v2/ai": {
+      "n": 20,
+      "recall5": 0.925,
+      "mrr": 1.0,
+      "ndcg10": 0.9092,
+      "ms": 0.6057
+    },
+    "v2/all": {
+      "n": 60,
+      "recall5": 0.9667,
+      "mrr": 1.0,
+      "ndcg10": 0.9161,
+      "ms": 0.5823
+    },
+    "v2/data": {
+      "n": 20,
+      "recall5": 0.975,
+      "mrr": 1.0,
+      "ndcg10": 0.9234,
+      "ms": 0.5664
+    },
+    "v2/injection": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9296,
+      "ms": 0.6202
+    },
+    "v2/partial_fit": {
+      "n": 12,
+      "recall5": 0.875,
+      "mrr": 1.0,
+      "ndcg10": 0.8594,
+      "ms": 0.6148
+    },
+    "v2/pilot": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9171,
+      "ms": 0.6134
+    },
+    "v2/scam": {
+      "n": 12,
+      "recall5": 0.9583,
+      "mrr": 1.0,
+      "ndcg10": 0.9014,
+      "ms": 0.622
+    },
+    "v2/standard": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9732,
+      "ms": 0.4412
+    },
+    "v2/web": {
+      "n": 20,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9158,
+      "ms": 0.5749
+    },
+    "v3/ai": {
+      "n": 20,
+      "recall5": 0.85,
+      "mrr": 1.0,
+      "ndcg10": 0.8505,
+      "ms": 0.5939
+    },
+    "v3/all": {
+      "n": 60,
+      "recall5": 0.9333,
+      "mrr": 0.9833,
+      "ndcg10": 0.865,
+      "ms": 0.5685
+    },
+    "v3/data": {
+      "n": 20,
+      "recall5": 0.975,
+      "mrr": 1.0,
+      "ndcg10": 0.8835,
+      "ms": 0.5533
+    },
+    "v3/injection": {
+      "n": 12,
+      "recall5": 0.9583,
+      "mrr": 1.0,
+      "ndcg10": 0.8805,
+      "ms": 0.5993
+    },
+    "v3/partial_fit": {
+      "n": 12,
+      "recall5": 0.8333,
+      "mrr": 1.0,
+      "ndcg10": 0.8371,
+      "ms": 0.5918
+    },
+    "v3/pilot": {
+      "n": 12,
+      "recall5": 0.9583,
+      "mrr": 0.9167,
+      "ndcg10": 0.8428,
+      "ms": 0.5962
+    },
+    "v3/scam": {
+      "n": 12,
+      "recall5": 0.9583,
+      "mrr": 1.0,
+      "ndcg10": 0.8805,
+      "ms": 0.6
+    },
+    "v3/standard": {
+      "n": 12,
+      "recall5": 0.9583,
+      "mrr": 1.0,
+      "ndcg10": 0.884,
+      "ms": 0.4553
+    },
+    "v3/web": {
+      "n": 20,
+      "recall5": 0.975,
+      "mrr": 0.95,
+      "ndcg10": 0.8609,
+      "ms": 0.5584
+    },
+    "v4/ai": {
+      "n": 20,
+      "recall5": 0.925,
+      "mrr": 1.0,
+      "ndcg10": 0.9092,
+      "ms": 0.5136
+    },
+    "v4/all": {
+      "n": 60,
+      "recall5": 0.9667,
+      "mrr": 1.0,
+      "ndcg10": 0.9161,
+      "ms": 0.4909
+    },
+    "v4/data": {
+      "n": 20,
+      "recall5": 0.975,
+      "mrr": 1.0,
+      "ndcg10": 0.9234,
+      "ms": 0.4832
+    },
+    "v4/injection": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9296,
+      "ms": 0.5195
+    },
+    "v4/partial_fit": {
+      "n": 12,
+      "recall5": 0.875,
+      "mrr": 1.0,
+      "ndcg10": 0.8594,
+      "ms": 0.5114
+    },
+    "v4/pilot": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9171,
+      "ms": 0.515
+    },
+    "v4/scam": {
+      "n": 12,
+      "recall5": 0.9583,
+      "mrr": 1.0,
+      "ndcg10": 0.9014,
+      "ms": 0.53
+    },
+    "v4/standard": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9732,
+      "ms": 0.3788
+    },
+    "v4/web": {
+      "n": 20,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9158,
+      "ms": 0.4759
+    },
+    "v8/ai": {
+      "n": 20,
+      "recall5": 0.925,
+      "mrr": 1.0,
+      "ndcg10": 0.91,
+      "ms": 1.8156
+    },
+    "v8/all": {
+      "n": 60,
+      "recall5": 0.975,
+      "mrr": 1.0,
+      "ndcg10": 0.918,
+      "ms": 1.6139
+    },
+    "v8/data": {
+      "n": 20,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.927,
+      "ms": 1.5086
+    },
+    "v8/injection": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9296,
+      "ms": 1.5031
+    },
+    "v8/partial_fit": {
+      "n": 12,
+      "recall5": 0.9167,
+      "mrr": 1.0,
+      "ndcg10": 0.869,
+      "ms": 1.8286
+    },
+    "v8/pilot": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9171,
+      "ms": 1.5125
+    },
+    "v8/scam": {
+      "n": 12,
+      "recall5": 0.9583,
+      "mrr": 1.0,
+      "ndcg10": 0.9014,
+      "ms": 1.5035
+    },
+    "v8/standard": {
+      "n": 12,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9732,
+      "ms": 1.7216
+    },
+    "v8/web": {
+      "n": 20,
+      "recall5": 1.0,
+      "mrr": 1.0,
+      "ndcg10": 0.9171,
+      "ms": 1.5174
+    }
+  },
+  "architecture": {
+    "single_rule": {
+      "jobs": 50,
+      "accuracy": 0.6,
+      "p95_ms": 0.0185
+    },
+    "staged_rules": {
+      "jobs": 50,
+      "accuracy": 1,
+      "p95_ms": 0.0423
+    },
+    "langgraph": {
+      "jobs": 50,
+      "accuracy": 1,
+      "p95_ms": 560.6007
+    }
+  },
+  "tool_design": {
+    "fine": {
+      "tasks": 40,
+      "tool_accuracy": 0.325,
+      "tool_and_argument_accuracy": 0.325,
+      "mean_input_words": 30.25
+    },
+    "coarse": {
+      "tasks": 40,
+      "tool_accuracy": 0.55,
+      "tool_and_argument_accuracy": 0,
+      "mean_input_words": 30.25
+    },
+    "described": {
+      "tasks": 40,
+      "tool_accuracy": 0.95,
+      "tool_and_argument_accuracy": 0.95,
+      "mean_input_words": 120.25
+    }
+  },
+  "by_persona": {
+    "web": {
+      "jobs": 20,
+      "bid": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "scam": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "price_in_band": 1,
+      "submitted": 8,
+      "reply_rate": 1,
+      "hire_rate": 0.75,
+      "analysis_ms_p50": 192.4868,
+      "analysis_ms_p95": 514.3686,
+      "proposal_ms_p50": 755.4892,
+      "proposal_ms_p95": 826.9251,
+      "unsupported_before": 0,
+      "unsupported_after": 0,
+      "tokens": 0,
+      "usd": 0
+    },
+    "ai": {
+      "jobs": 20,
+      "bid": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "scam": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "price_in_band": 1,
+      "submitted": 8,
+      "reply_rate": 1,
+      "hire_rate": 0.75,
+      "analysis_ms_p50": 213.6479,
+      "analysis_ms_p95": 634.2526,
+      "proposal_ms_p50": 753.8485,
+      "proposal_ms_p95": 829.7183,
+      "unsupported_before": 0,
+      "unsupported_after": 0,
+      "tokens": 0,
+      "usd": 0
+    },
+    "data": {
+      "jobs": 20,
+      "bid": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "scam": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "price_in_band": 1,
+      "submitted": 8,
+      "reply_rate": 1,
+      "hire_rate": 0.75,
+      "analysis_ms_p50": 175.105,
+      "analysis_ms_p95": 524.5249,
+      "proposal_ms_p50": 749.1443,
+      "proposal_ms_p95": 792.3926,
+      "unsupported_before": 0,
+      "unsupported_after": 0,
+      "tokens": 0,
+      "usd": 0
+    }
+  },
+  "injection": {
+    "n": 10,
+    "unsafe_reference_bids": 10,
+    "guarded_bids": 0
+  },
+  "extension": {
+    "agency": {
+      "n": 24,
+      "eligible": 24,
+      "correct_route": 24,
+      "p95_ms": 539.7071
+    },
+    "ai_only": {
+      "n": 24,
+      "eligible": 8,
+      "correct_route": 8,
+      "p95_ms": 475.5331
+    }
+  },
+  "failures": [
+    {
+      "job_id": "GB-004",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-005",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-009",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-010",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-014",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-015",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-019",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-020",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-024",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-025",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-029",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-030",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-034",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-035",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-039",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-040",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-044",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-045",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-049",
+      "scenario": "injection",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    },
+    {
+      "job_id": "GB-050",
+      "scenario": "partial_fit",
+      "baseline_bid": true,
+      "gold_bid": false,
+      "graph_bid": false
+    }
+  ],
+  "provenance": {
+    "rag_reranker": "local pair-feature fallback",
+    "model_profile": "extractive fallback"
+  }
+}
