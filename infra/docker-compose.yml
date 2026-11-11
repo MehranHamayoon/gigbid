@@ -38,6 +38,11 @@ services:
   api:
     <<: *service
     ports: ["8000:8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/health', timeout=3).close()"]
+      interval: 5s
+      timeout: 4s
+      retries: 24
     depends_on:
       postgres:
         condition: service_healthy
@@ -52,7 +57,7 @@ services:
       redis:
         condition: service_started
       api:
-        condition: service_started
+        condition: service_healthy
   portfolio:
     <<: *service
     command: ["uvicorn","mcp_servers.http:portfolio","--factory","--host","0.0.0.0","--port","8000"]
@@ -89,4 +94,5 @@ volumes:
   postgres:
   redis:
   ollama:
+
 
