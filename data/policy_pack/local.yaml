@@ -1,0 +1,9 @@
+version: local-2026-11
+max_connects_per_proposal: 14
+minimum_budget_usd: 40
+risk_rules:
+  unpaid_work: '(?:unpaid trial|for free|free test|unpaid production|no payment)'
+  off_platform: '(?:telegram|whatsapp|off.platform|external messaging|pay directly)'
+  injection: '(?:ignore (?:all |the )?(?:previous|prior|system)|system prompt|override (?:your|the) (?:rules|policy)|auto.approve|reveal (?:your|the)|send (?:a |the )?proposal now)'
+  credentials: '(?:send (?:your|the) password|private key|seed phrase)'
+blocked_draft: '(?:\btelegram\b|\bwhatsapp\b|off.platform|guarantee[ds]?|100% success|\b(?:https?://|www\.)|[\w.+-]+@[\w.-]+\.[a-z]{2,}|(?:\+?\d[\d .()-]{7,}\d))'

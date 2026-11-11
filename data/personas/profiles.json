@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ai",
+    "label": "AI/ML engineer",
+    "rate": 40,
+    "floor": 180,
+    "skills": [
+      "OCR",
+      "Python",
+      "RAG",
+      "classification",
+      "document parsing",
+      "forecasting",
+      "pandas",
+      "scikit-learn",
+      "time series",
+      "vector search"
+    ]
+  },
+  {
+    "id": "web",
+    "label": "Full-stack developer",
+    "rate": 40,
+    "floor": 180,
+    "skills": [
+      "Celery",
+      "FastAPI",
+      "Next.js",
+      "PostgreSQL",
+      "Python",
+      "React",
+      "Redis",
+      "Stripe",
+      "TypeScript",
+      "accessibility",
+      "webhooks"
+    ]
+  },
+  {
+    "id": "data",
+    "label": "Data analyst",
+    "rate": 40,
+    "floor": 180,
+    "skills": [
+      "A/B testing",
+      "BigQuery",
+      "Excel",
+      "Power BI",
+      "Power Query",
+      "Python",
+      "SQL",
+      "dashboarding",
+      "data cleaning",
+      "dbt",
+      "statistics"
+    ]
+  }
+]

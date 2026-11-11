@@ -1,0 +1,12 @@
+.state/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.env
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.pyc
+data/processed/

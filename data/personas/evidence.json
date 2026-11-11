@@ -1,0 +1,818 @@
+[
+  {
+    "id": "ai-1-case",
+    "persona": "ai",
+    "project": "ai-1",
+    "type": "case_study",
+    "title": "Customer churn classifier",
+    "text": "Compared logistic regression and random forest with a held-out split and reported precision and recall.",
+    "skills": [
+      "Python",
+      "scikit-learn",
+      "classification"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-1-readme",
+    "persona": "ai",
+    "project": "ai-1",
+    "type": "readme",
+    "title": "Customer churn classifier",
+    "text": "Project scope for Customer churn classifier. Tooling: Python, scikit-learn, classification.",
+    "skills": [
+      "Python",
+      "scikit-learn",
+      "classification"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-1-proposal",
+    "persona": "ai",
+    "project": "ai-1",
+    "type": "proposal",
+    "title": "Customer churn classifier",
+    "text": "Suggested delivery: define acceptance tests for Customer churn classifier, build a baseline and review it with the client.",
+    "skills": [
+      "Python",
+      "scikit-learn",
+      "classification"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "ai-1-review",
+    "persona": "ai",
+    "project": "ai-1",
+    "type": "review",
+    "title": "Customer churn classifier",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "Python",
+      "scikit-learn",
+      "classification"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-2-case",
+    "persona": "ai",
+    "project": "ai-2",
+    "type": "case_study",
+    "title": "Invoice field extraction",
+    "text": "Extracted invoice line items using OCR and validated output against a typed schema.",
+    "skills": [
+      "Python",
+      "OCR",
+      "document parsing"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-2-readme",
+    "persona": "ai",
+    "project": "ai-2",
+    "type": "readme",
+    "title": "Invoice field extraction",
+    "text": "Project scope for Invoice field extraction. Tooling: Python, OCR, document parsing.",
+    "skills": [
+      "Python",
+      "OCR",
+      "document parsing"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-2-proposal",
+    "persona": "ai",
+    "project": "ai-2",
+    "type": "proposal",
+    "title": "Invoice field extraction",
+    "text": "Suggested delivery: define acceptance tests for Invoice field extraction, build a baseline and review it with the client.",
+    "skills": [
+      "Python",
+      "OCR",
+      "document parsing"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "ai-2-review",
+    "persona": "ai",
+    "project": "ai-2",
+    "type": "review",
+    "title": "Invoice field extraction",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "Python",
+      "OCR",
+      "document parsing"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-3-case",
+    "persona": "ai",
+    "project": "ai-3",
+    "type": "case_study",
+    "title": "Support document search",
+    "text": "Indexed support articles and measured retrieval coverage against a small query set.",
+    "skills": [
+      "Python",
+      "RAG",
+      "vector search"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-3-readme",
+    "persona": "ai",
+    "project": "ai-3",
+    "type": "readme",
+    "title": "Support document search",
+    "text": "Project scope for Support document search. Tooling: Python, RAG, vector search.",
+    "skills": [
+      "Python",
+      "RAG",
+      "vector search"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-3-proposal",
+    "persona": "ai",
+    "project": "ai-3",
+    "type": "proposal",
+    "title": "Support document search",
+    "text": "Suggested delivery: define acceptance tests for Support document search, build a baseline and review it with the client.",
+    "skills": [
+      "Python",
+      "RAG",
+      "vector search"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "ai-3-review",
+    "persona": "ai",
+    "project": "ai-3",
+    "type": "review",
+    "title": "Support document search",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "Python",
+      "RAG",
+      "vector search"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-4-case",
+    "persona": "ai",
+    "project": "ai-4",
+    "type": "case_study",
+    "title": "Daily demand forecast",
+    "text": "Built a time-series baseline with rolling validation and seasonal error analysis.",
+    "skills": [
+      "pandas",
+      "forecasting",
+      "time series"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-4-readme",
+    "persona": "ai",
+    "project": "ai-4",
+    "type": "readme",
+    "title": "Daily demand forecast",
+    "text": "Project scope for Daily demand forecast. Tooling: pandas, forecasting, time series.",
+    "skills": [
+      "pandas",
+      "forecasting",
+      "time series"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "ai-4-proposal",
+    "persona": "ai",
+    "project": "ai-4",
+    "type": "proposal",
+    "title": "Daily demand forecast",
+    "text": "Suggested delivery: define acceptance tests for Daily demand forecast, build a baseline and review it with the client.",
+    "skills": [
+      "pandas",
+      "forecasting",
+      "time series"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "ai-4-review",
+    "persona": "ai",
+    "project": "ai-4",
+    "type": "review",
+    "title": "Daily demand forecast",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "pandas",
+      "forecasting",
+      "time series"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-1-case",
+    "persona": "web",
+    "project": "web-1",
+    "type": "case_study",
+    "title": "Subscription admin console",
+    "text": "Built a React administration dashboard with typed API calls and role-scoped views.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "FastAPI"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-1-readme",
+    "persona": "web",
+    "project": "web-1",
+    "type": "readme",
+    "title": "Subscription admin console",
+    "text": "Project scope for Subscription admin console. Tooling: React, TypeScript, FastAPI.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "FastAPI"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-1-proposal",
+    "persona": "web",
+    "project": "web-1",
+    "type": "proposal",
+    "title": "Subscription admin console",
+    "text": "Suggested delivery: define acceptance tests for Subscription admin console, build a baseline and review it with the client.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "FastAPI"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "web-1-review",
+    "persona": "web",
+    "project": "web-1",
+    "type": "review",
+    "title": "Subscription admin console",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "React",
+      "TypeScript",
+      "FastAPI"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-2-case",
+    "persona": "web",
+    "project": "web-2",
+    "type": "case_study",
+    "title": "Appointment booking portal",
+    "text": "Built an appointment portal with transactional reservations and keyboard navigation.",
+    "skills": [
+      "Next.js",
+      "PostgreSQL",
+      "accessibility"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-2-readme",
+    "persona": "web",
+    "project": "web-2",
+    "type": "readme",
+    "title": "Appointment booking portal",
+    "text": "Project scope for Appointment booking portal. Tooling: Next.js, PostgreSQL, accessibility.",
+    "skills": [
+      "Next.js",
+      "PostgreSQL",
+      "accessibility"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-2-proposal",
+    "persona": "web",
+    "project": "web-2",
+    "type": "proposal",
+    "title": "Appointment booking portal",
+    "text": "Suggested delivery: define acceptance tests for Appointment booking portal, build a baseline and review it with the client.",
+    "skills": [
+      "Next.js",
+      "PostgreSQL",
+      "accessibility"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "web-2-review",
+    "persona": "web",
+    "project": "web-2",
+    "type": "review",
+    "title": "Appointment booking portal",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "Next.js",
+      "PostgreSQL",
+      "accessibility"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-3-case",
+    "persona": "web",
+    "project": "web-3",
+    "type": "case_study",
+    "title": "Inventory event worker",
+    "text": "Implemented idempotent background inventory updates with bounded retries.",
+    "skills": [
+      "Python",
+      "Celery",
+      "Redis"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-3-readme",
+    "persona": "web",
+    "project": "web-3",
+    "type": "readme",
+    "title": "Inventory event worker",
+    "text": "Project scope for Inventory event worker. Tooling: Python, Celery, Redis.",
+    "skills": [
+      "Python",
+      "Celery",
+      "Redis"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-3-proposal",
+    "persona": "web",
+    "project": "web-3",
+    "type": "proposal",
+    "title": "Inventory event worker",
+    "text": "Suggested delivery: define acceptance tests for Inventory event worker, build a baseline and review it with the client.",
+    "skills": [
+      "Python",
+      "Celery",
+      "Redis"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "web-3-review",
+    "persona": "web",
+    "project": "web-3",
+    "type": "review",
+    "title": "Inventory event worker",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "Python",
+      "Celery",
+      "Redis"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-4-case",
+    "persona": "web",
+    "project": "web-4",
+    "type": "case_study",
+    "title": "Checkout integration",
+    "text": "Validated signed webhook events and reconciled checkout status on retries.",
+    "skills": [
+      "TypeScript",
+      "Stripe",
+      "webhooks"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-4-readme",
+    "persona": "web",
+    "project": "web-4",
+    "type": "readme",
+    "title": "Checkout integration",
+    "text": "Project scope for Checkout integration. Tooling: TypeScript, Stripe, webhooks.",
+    "skills": [
+      "TypeScript",
+      "Stripe",
+      "webhooks"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "web-4-proposal",
+    "persona": "web",
+    "project": "web-4",
+    "type": "proposal",
+    "title": "Checkout integration",
+    "text": "Suggested delivery: define acceptance tests for Checkout integration, build a baseline and review it with the client.",
+    "skills": [
+      "TypeScript",
+      "Stripe",
+      "webhooks"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "web-4-review",
+    "persona": "web",
+    "project": "web-4",
+    "type": "review",
+    "title": "Checkout integration",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "TypeScript",
+      "Stripe",
+      "webhooks"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-1-case",
+    "persona": "data",
+    "project": "data-1",
+    "type": "case_study",
+    "title": "Sales reconciliation",
+    "text": "Reconciled fact tables with dbt tests and documented business definitions.",
+    "skills": [
+      "SQL",
+      "dbt",
+      "BigQuery"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-1-readme",
+    "persona": "data",
+    "project": "data-1",
+    "type": "readme",
+    "title": "Sales reconciliation",
+    "text": "Project scope for Sales reconciliation. Tooling: SQL, dbt, BigQuery.",
+    "skills": [
+      "SQL",
+      "dbt",
+      "BigQuery"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-1-proposal",
+    "persona": "data",
+    "project": "data-1",
+    "type": "proposal",
+    "title": "Sales reconciliation",
+    "text": "Suggested delivery: define acceptance tests for Sales reconciliation, build a baseline and review it with the client.",
+    "skills": [
+      "SQL",
+      "dbt",
+      "BigQuery"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "data-1-review",
+    "persona": "data",
+    "project": "data-1",
+    "type": "review",
+    "title": "Sales reconciliation",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "SQL",
+      "dbt",
+      "BigQuery"
+    ],
+    "date": "2025-01-14",
+    "industry": "SaaS",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-2-case",
+    "persona": "data",
+    "project": "data-2",
+    "type": "case_study",
+    "title": "Operations reporting",
+    "text": "Built operations measures and checked dashboard totals against SQL extracts.",
+    "skills": [
+      "Power BI",
+      "SQL",
+      "dashboarding"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-2-readme",
+    "persona": "data",
+    "project": "data-2",
+    "type": "readme",
+    "title": "Operations reporting",
+    "text": "Project scope for Operations reporting. Tooling: Power BI, SQL, dashboarding.",
+    "skills": [
+      "Power BI",
+      "SQL",
+      "dashboarding"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-2-proposal",
+    "persona": "data",
+    "project": "data-2",
+    "type": "proposal",
+    "title": "Operations reporting",
+    "text": "Suggested delivery: define acceptance tests for Operations reporting, build a baseline and review it with the client.",
+    "skills": [
+      "Power BI",
+      "SQL",
+      "dashboarding"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "data-2-review",
+    "persona": "data",
+    "project": "data-2",
+    "type": "review",
+    "title": "Operations reporting",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "Power BI",
+      "SQL",
+      "dashboarding"
+    ],
+    "date": "2025-02-14",
+    "industry": "Retail",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-3-case",
+    "persona": "data",
+    "project": "data-3",
+    "type": "case_study",
+    "title": "Experiment analysis",
+    "text": "Analysed an experiment with confidence intervals and checked assignment balance.",
+    "skills": [
+      "Python",
+      "statistics",
+      "A/B testing"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-3-readme",
+    "persona": "data",
+    "project": "data-3",
+    "type": "readme",
+    "title": "Experiment analysis",
+    "text": "Project scope for Experiment analysis. Tooling: Python, statistics, A/B testing.",
+    "skills": [
+      "Python",
+      "statistics",
+      "A/B testing"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-3-proposal",
+    "persona": "data",
+    "project": "data-3",
+    "type": "proposal",
+    "title": "Experiment analysis",
+    "text": "Suggested delivery: define acceptance tests for Experiment analysis, build a baseline and review it with the client.",
+    "skills": [
+      "Python",
+      "statistics",
+      "A/B testing"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "data-3-review",
+    "persona": "data",
+    "project": "data-3",
+    "type": "review",
+    "title": "Experiment analysis",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "Python",
+      "statistics",
+      "A/B testing"
+    ],
+    "date": "2025-03-14",
+    "industry": "Operations",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-4-case",
+    "persona": "data",
+    "project": "data-4",
+    "type": "case_study",
+    "title": "Billing spreadsheet cleanup",
+    "text": "Standardised a billing workbook and validated row totals after deduplication.",
+    "skills": [
+      "Excel",
+      "Power Query",
+      "data cleaning"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-4-readme",
+    "persona": "data",
+    "project": "data-4",
+    "type": "readme",
+    "title": "Billing spreadsheet cleanup",
+    "text": "Project scope for Billing spreadsheet cleanup. Tooling: Excel, Power Query, data cleaning.",
+    "skills": [
+      "Excel",
+      "Power Query",
+      "data cleaning"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  },
+  {
+    "id": "data-4-proposal",
+    "persona": "data",
+    "project": "data-4",
+    "type": "proposal",
+    "title": "Billing spreadsheet cleanup",
+    "text": "Suggested delivery: define acceptance tests for Billing spreadsheet cleanup, build a baseline and review it with the client.",
+    "skills": [
+      "Excel",
+      "Power Query",
+      "data cleaning"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": "replied"
+  },
+  {
+    "id": "data-4-review",
+    "persona": "data",
+    "project": "data-4",
+    "type": "review",
+    "title": "Billing spreadsheet cleanup",
+    "text": "Delivered documentation and reviewed the acceptance checklist with the client.",
+    "skills": [
+      "Excel",
+      "Power Query",
+      "data cleaning"
+    ],
+    "date": "2025-04-14",
+    "industry": "Finance",
+    "source": "Synthetic portfolio fixture",
+    "outcome": null
+  }
+]
