@@ -1,21 +1,8 @@
-# Student Implementation Checklist
+# Implementation status
 
-- [ ] Read the assignment and the supplied GigSim documentation.
-- [ ] Implement the marketplace port and GigSim adapter.
-- [ ] Implement Portfolio MCP tools, resources and prompts.
-- [ ] Implement Marketplace MCP read/write tools with schemas and idempotency.
-- [ ] Implement Workspace MCP tools or documented local mock.
-- [ ] Ingest CVs, case studies, READMEs, code, reviews and past proposals.
-- [ ] Implement V0 dense retrieval and at least four additional required variants.
-- [ ] Implement claim splitting and evidence verification.
-- [ ] Implement the bid graph with parallel analysis branches.
-- [ ] Implement the conversation graph.
-- [ ] Add bounded Critic loop and Compliance Guard.
-- [ ] Add LangGraph interrupts for all external actions and Connects spend.
-- [ ] Add durable checkpointing and crash/resume test.
-- [ ] Build all required UI screens and approval interactions.
-- [ ] Add worker scheduling, tracing, budgets and guardrails.
-- [ ] Add unit, integration, contract and Playwright tests.
-- [ ] Run evaluations and commit reproducible results.
-- [ ] Deploy and verify reviewer access.
-- [ ] Complete report, demo, technical write-up and AI usage disclosure.
+- Local React and FastAPI reviewer workflow, including review, edit, rejection, simulator messages, pipeline, analytics and run traces.
+- Three MCP services, in-memory MCP contract tests, runtime checkpoints, worker recovery, tool allowlists and simulator idempotency.
+- Local synthetic RAG and orchestration comparators, Kaggle pricing aggregate, two CPU Qwen configurations and reproducible result files.
+- Render reviewer service on the free plan. The Runbook describes cold starts and storage limits.
+- Remaining evaluation work includes independently labelled blind human review, judge calibration, ReAct and prebuilt supervisor baselines, and the instructor's hidden run.
+- Approved Upwork OAuth and GitHub MCP endpoints require their own credentials and integration verification. The bundled reviewer uses the simulator.

@@ -90,3 +90,10 @@ class Balance(BaseModel):
     remaining: int
     spent: int
     week_spent: int
+
+
+class GitHubImport(BaseModel):
+    owner: str = Field(pattern=r"^[A-Za-z0-9-]{1,39}$")
+    repo: str = Field(pattern=r"^[A-Za-z0-9_.-]{1,100}$")
+    file: str = Field(default="README.md", max_length=250)
+    skills: list[str] = Field(default_factory=list, max_length=12)

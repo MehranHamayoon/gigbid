@@ -53,6 +53,7 @@ export function Settings({user, onSave, onboarding = false}: {user: User; onSave
     return (response.data ?? []) as Evidence[]
   }, [] as Evidence[], user.settings.persona)
   const memory = useLoad(async () => (await api.GET('/api/memory')).data as Memory[] ?? [], [] as Memory[], user.id)
+  const github = useLoad(async () => (await api.GET("/api/portfolio/github")).data as {configured: boolean}, undefined, user.id)
   const market = useLoad(async () => (await api.GET('/api/settings/upwork')).data as {configured: boolean; connected: boolean; mode: string}, undefined, user.id)
   const update = (value: Partial<Preferences>) => setForm(previous => ({...previous, ...value}))
   async function save(event: FormEvent<HTMLFormElement>) {
@@ -74,6 +75,20 @@ export function Settings({user, onSave, onboarding = false}: {user: User; onSave
       const response = await fetch('/api/portfolio', {method: 'POST', body: data})
       if (!response.ok) setProblem(errorText(await response.json()))
       else {setNotice('Portfolio evidence indexed.'); evidence.refresh()}
+    } catch (error) {setProblem(errorText(error))}
+  }
+  async function importGitHub(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setProblem('')
+    setNotice('')
+    const data = new FormData(event.currentTarget)
+    try {
+      const reply = await api.POST('/api/portfolio/github', {body: {
+        owner: String(data.get('owner')), repo: String(data.get('repo')), file: String(data.get('path')),
+        skills: String(data.get('skills')).split(',').map(value => value.trim()).filter(Boolean),
+      }})
+      if (reply.error) setProblem(errorText(reply.error))
+      else {setNotice('Public GitHub evidence indexed.'); evidence.refresh()}
     } catch (error) {setProblem(errorText(error))}
   }
   return <>
@@ -106,6 +121,14 @@ export function Settings({user, onSave, onboarding = false}: {user: User; onSave
             <label>Document type<select name="kind"><option value="case_study">Case study</option><option value="cv">CV</option><option value="readme">README</option><option value="code">Source code</option><option value="review">Review</option><option value="proposal">Past proposal</option></select></label>
             <label>Industry<input name="industry" placeholder="SaaS"/></label>
           </div><div><button className="button secondary"><FileUp size={16}/> Index file</button></div></form>
+          {github.data?.configured && <details className="repo-import"><summary>Import a public GitHub file</summary>
+            <form className="stack compact" onSubmit={importGitHub}><div className="form-grid">
+              <label>Owner<input name="owner" required placeholder="octocat"/></label>
+              <label>Repository<input name="repo" required/></label>
+              <label>File path<input name="path" defaultValue="README.md" required/></label>
+              <label>Skills<input name="skills" placeholder="React, TypeScript"/></label>
+            </div><div><button className="button secondary">Import with GitHub MCP</button></div></form>
+          </details>}
           <div className="evidence-list">{evidence.data.map(item => <div className="claim-row" key={item.id}><div><strong>{item.title}</strong><div className="small muted">{item.id} · {item.type.replaceAll('_',' ')}</div></div>
             {item.id.startsWith('upload-') && <button className="icon-button" aria-label={`Delete ${item.id}`} onClick={async () => {
               const response = await api.DELETE('/api/portfolio/{evidence_id}', {params: {path: {evidence_id: item.id}}})
@@ -123,3 +146,4 @@ export function Settings({user, onSave, onboarding = false}: {user: User; onSave
     </div>
   </>
 }
+

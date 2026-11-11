@@ -14,6 +14,7 @@ from reportlab.platypus import PageBreak, Paragraph, SimpleDocTemplate, Spacer, 
 
 ROOT = Path(__file__).resolve().parents[1]
 R = json.loads((ROOT / "evals/results/summary.json").read_text(encoding="utf-8"))
+MODELS = json.loads((ROOT / "evals/results/open_models.json").read_text(encoding="utf-8"))
 K = json.loads((ROOT / "data/sample/market_statistics.json").read_text(encoding="utf-8"))
 GREEN = colors.HexColor("#154736")
 INK = colors.HexColor("#162d28")
@@ -154,7 +155,12 @@ def main(path):
         for key, name in zip(personas, ["AI / ML","Full-stack","Data analyst"])
     ], [.25,.20,.20,.16,.19])
     add("Claim and outcome evaluation", "h2")
-    add(f'{summary["submitted"]} generated proposals were submitted in the local approved arm. Unsupported claims before and after verification were {summary["unsupported_before"]} and {summary["unsupported_after"]}. The forged-claim test shows the verifier can reject an unsupported statement with a valid citation. The fixed local outcomes were {percentage(summary["reply_rate"])} replied or hired and {percentage(summary["hire_rate"])} hired. An LLM judge and blind human panel are outstanding.')
+    cosine = R["cosine_end_to_end"]
+    table(["End-to-end arm", "Unsupported / proposal", "Reply rate", "Proposal p95", "API spend"], [
+        ["V0", cosine["unsupported_after"]/cosine["submitted"], percentage(cosine["reply_rate"]), ms(cosine["proposal_ms_p95"]), "USD 0"],
+        ["V2", summary["unsupported_after"]/summary["submitted"], percentage(summary["reply_rate"]), ms(summary["proposal_ms_p95"]), "USD 0"]
+    ], [.21,.25,.15,.21,.18])
+    add(f'{summary["submitted"]} generated proposals were submitted in the local approved arm. Unsupported claims before and after verification were {summary["unsupported_before"]} and {summary["unsupported_after"]}. The forged-claim test shows the verifier can reject an unsupported statement with a valid citation. The two retrieval arms tied on replies despite different recall. V2 outcomes were {percentage(summary["reply_rate"])} replied or hired and {percentage(summary["hire_rate"])} hired. An LLM judge and blind human panel are outstanding.')
     source("evals/results/retrieval.csv · evals/results/summary.json · tests/unit/test_verify.py")
 
     section("04  /  R&D QUESTION C", "What the graph adds")
@@ -170,6 +176,14 @@ def main(path):
     add("What the trace shows", "h2")
     add("GB-001 uses the plan-first test strategy, takes a Critic revision, verifies its claims, pauses and dispatches. GB-003 skips unpaid work and off-platform contact. GB-004 skips a planted instruction. Public traces are restricted to these synthetic runs.")
     source("evals/results/trace-gb-001.json · trace-gb-003.json · trace-gb-004.json · tests/integration/test_bid_workflow.py")
+    add("Two open-weight model configurations", "h2")
+    add("Each Qwen model ranks shuffled candidate excerpts for the same twelve standard development jobs. The local CPU runner uses llama.cpp b12242, four threads, Q4_K_M, and an AMD Ryzen 5 5600H. Both arms returned parseable output and incurred zero billed API cost.")
+    table(["Model", "Top-1 accuracy", "p95", "Output tokens/s"], [
+        [row["profile"], percentage(row["top1_accuracy"]), ms(row["latency_p95_ms"]), f'{row["mean_output_tokens_per_second"]:.1f}']
+        for row in MODELS
+    ], [.40,.18,.21,.21])
+    add("The 1.5B configuration is the optional local Writer default. The reviewer service uses the measured extractive fallback and keeps exact evidence as the source of each claim.")
+    source("evals/results/open_models.json · evals/runners/model_eval.py · agent/config.yaml")
 
     section("05  /  EXTENSION AND CHANGE REQUEST", "Routing for a small agency")
     ext = R["extension"]
@@ -210,7 +224,7 @@ def main(path):
     injection = R["injection"]
     add(f'The direct rule would bid on {injection["unsafe_reference_bids"]} of {injection["n"]} planted-instruction cases. The guarded graph bid on {injection["guarded_bids"]}. These counts measure decisions on the first fifty fixtures. No reference arm attempted a marketplace write. A keyword detector can miss paraphrases. The approval signature and tool allowlists still guard writes. Logs mask common emails and phone/payment number patterns. OAuth token values are encrypted.')
     add("Verification boundary", "h2")
-    add("The completed evidence is local development data, MCP protocol snapshots, browser workflow tests, and persisted approval tests. The instructor runs the hidden tests after the deadline. Upwork OAuth, paid hosting durability, blind human review, and instructor hidden-set latency and cost are outside the measured results.")
+    add("The completed evidence is local development data, MCP protocol snapshots, browser workflow tests, and persisted approval tests. The instructor runs the hidden tests after the deadline. Upwork OAuth, persistent hosting across restarts, blind human review, and instructor hidden-set latency and cost are outside the measured results.")
     add("Résumé", "h2")
     add(f'Built a LangGraph and MCP freelance copilot with resumable approval and idempotent simulator writes. Measured {percentage(R["rag"]["v2/all"]["recall5"])} hybrid evidence Recall@5 across {summary["jobs"]} synthetic jobs.')
     source("evals/results/summary.json · tests/integration/test_bid_workflow.py · docs/RUNBOOK.md")
@@ -224,5 +238,6 @@ if __name__ == "__main__":
     destination = Path(sys.argv[1]).resolve()
     destination.parent.mkdir(parents=True, exist_ok=True)
     main(destination)
+
 
 

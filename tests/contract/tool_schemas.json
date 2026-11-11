@@ -23,6 +23,14 @@
                 "title": "Job Id",
                 "type": "string"
               },
+              "screening_answers": {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 12,
+                "title": "Screening Answers",
+                "type": "array"
+              },
               "text": {
                 "maxLength": 5000,
                 "minLength": 12,
@@ -372,6 +380,14 @@
                 "title": "Job Id",
                 "type": "string"
               },
+              "screening_answers": {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 12,
+                "title": "Screening Answers",
+                "type": "array"
+              },
               "text": {
                 "maxLength": 5000,
                 "minLength": 12,
@@ -491,6 +507,14 @@
                 "minLength": 1,
                 "title": "Job Id",
                 "type": "string"
+              },
+              "screening_answers": {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 12,
+                "title": "Screening Answers",
+                "type": "array"
               },
               "text": {
                 "maxLength": 5000,
@@ -671,6 +695,11 @@
         "$defs": {
           "Filters": {
             "properties": {
+              "exclude_synthetic": {
+                "default": false,
+                "title": "Exclude Synthetic",
+                "type": "boolean"
+              },
               "persona": {
                 "default": "ai",
                 "title": "Persona",

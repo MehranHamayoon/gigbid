@@ -9,9 +9,9 @@ models:
     scout: qwen2.5:0.5b
     fit_matcher: qwen2.5:0.5b
     pricing: qwen2.5:0.5b
-    writer: qwen2.5:3b
-    critic: qwen2.5:3b
-    client_liaison: qwen2.5:3b
+    writer: qwen2.5:1.5b
+    critic: qwen2.5:1.5b
+    client_liaison: qwen2.5:1.5b
     compliance: qwen2.5:0.5b
     embeddings: nomic-embed-text
     reranker: BAAI/bge-reranker-base
@@ -31,3 +31,4 @@ budgets:
 thresholds:
   minimum_fit_score: 0.65
   maximum_risk_score: 0.68
+

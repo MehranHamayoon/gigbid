@@ -12,6 +12,8 @@ class GigBidState(TypedDict, total=False):
     filters: str
     strategy: str
     include_attested_skills: bool
+    rag_variant: str
+    autonomy: str
     job: dict[str, Any]
     job_spec: dict[str, Any]
     risk_report: dict[str, Any]
@@ -34,4 +36,5 @@ class GigBidState(TypedDict, total=False):
     steps: Annotated[int, add]
     tokens: Annotated[int, add]
     event_stats: Annotated[list[dict], add]
+
 

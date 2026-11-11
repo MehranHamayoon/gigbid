@@ -13,7 +13,7 @@ def decision(state):
     elif job["budget_max"] < state["floor"]:
         value = BidDecision(action="skip", reason="The posted budget is below your minimum.")
     elif fit["score"] < rules["minimum_fit_score"]:
-        value = BidDecision(action="watch" if fit["score"] else "skip",
+        value = BidDecision(action="watch" if fit["score"] and state.get("autonomy") != "auto_skip" else "skip",
                             reason="Missing portfolio evidence for " + ", ".join(fit["missing_skills"]) + ".")
     else:
         value = BidDecision(action="bid", reason=f"{len(fit['matched_skills'])} requirements have portfolio evidence. Risk is within policy.")
@@ -35,4 +35,5 @@ async def pricing(state):
         response.update(decision=BidDecision(action="watch", reason="The weekly or available Connects budget is too low.").model_dump(),
                         approval_status="watch")
     return response
+
 

@@ -15,6 +15,7 @@ x-service: &service
     GIGBID_EMBEDDED_WORKER: "0"
     REVIEWER_EMAIL: ${REVIEWER_EMAIL:-}
     REVIEWER_PASSWORD: ${REVIEWER_PASSWORD:-}
+    GITHUB_MCP_TOKEN: ${GITHUB_MCP_TOKEN:-}
     MARKETPLACE_MODE: ${MARKETPLACE_MODE:-gigsim}
     GIGSIM_BASE_URL: http://gigsim:8000
     GIGBID_MARKETPLACE_MCP_URL: http://marketplace:8000/mcp
@@ -88,3 +89,4 @@ volumes:
   postgres:
   redis:
   ollama:
+

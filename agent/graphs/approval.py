@@ -7,7 +7,8 @@ from mcp_servers.marketplace.server import DraftPayload, mode, signature
 
 def request(state, text, message=False):
     amount = 0 if message else state["price_quote"]["amount"]
-    return DraftPayload(job_id=state["job_id"], text=text, amount=amount).model_dump()
+    answers = [] if message else state["proposal_draft"]["screening_answers"]
+    return DraftPayload(job_id=state["job_id"], text=text, amount=amount, screening_answers=answers).model_dump()
 
 
 async def market(state, tool, payload, dry_run=True):
@@ -28,3 +29,4 @@ def human_approval(state):
                "risk": state.get("risk_report"), "price": state.get("price_quote"), "preview": state["preview"]}
     result = Approval.model_validate(interrupt(payload))
     return {"approval": result.model_dump(), "approval_status": "rejected" if result.action == "reject" else "approved"}
+

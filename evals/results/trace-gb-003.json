@@ -1,28 +1,28 @@
 {
   "job_id": "GB-003",
-  "trace_id": "34c2913f13ce4c7f86e9d857972a8a99",
+  "trace_id": "f45975180d884a3cb84fee1375e9692a",
   "events": [
     {
       "node": "scout",
-      "duration_ms": 123.053,
+      "duration_ms": 40.777,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "analyst",
-      "duration_ms": 0.027,
+      "duration_ms": 0.028,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "risk_assessor",
-      "duration_ms": 153.658,
+      "duration_ms": 66.221,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "fit_matcher",
-      "duration_ms": 153.528,
+      "duration_ms": 66.046,
       "tokens": 0,
       "usd": 0
     },

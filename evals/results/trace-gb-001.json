@@ -1,53 +1,53 @@
 {
   "job_id": "GB-001",
-  "trace_id": "014ff543cc2e4d28bb2016cebfe79a18",
+  "trace_id": "2c0e8bbe79ef4d7f87a409e77a6c1420",
   "events": [
     {
       "node": "scout",
-      "duration_ms": 139.423,
+      "duration_ms": 56.516,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "analyst",
-      "duration_ms": 0.062,
+      "duration_ms": 0.065,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "risk_assessor",
-      "duration_ms": 155.234,
+      "duration_ms": 67.769,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "fit_matcher",
-      "duration_ms": 154.988,
+      "duration_ms": 67.477,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "decision",
-      "duration_ms": 0.051,
+      "duration_ms": 0.055,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "pricing",
-      "duration_ms": 147.845,
+      "duration_ms": 62.309,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "writer",
-      "duration_ms": 0.092,
+      "duration_ms": 0.089,
       "tokens": 0,
       "usd": 0,
       "model": "extractive"
     },
     {
       "node": "verifier",
-      "duration_ms": 0.047,
+      "duration_ms": 0.046,
       "tokens": 0,
       "usd": 0
     },
@@ -59,56 +59,56 @@
     },
     {
       "node": "revise",
-      "duration_ms": 0.019,
+      "duration_ms": 0.02,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "writer",
-      "duration_ms": 0.059,
+      "duration_ms": 0.065,
       "tokens": 0,
       "usd": 0,
       "model": "extractive"
     },
     {
       "node": "verifier",
-      "duration_ms": 0.065,
+      "duration_ms": 0.064,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "critic",
-      "duration_ms": 0.033,
+      "duration_ms": 0.035,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "compliance",
-      "duration_ms": 0.132,
+      "duration_ms": 0.134,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "preview",
-      "duration_ms": 36.858,
+      "duration_ms": 12.138,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "human_approval",
-      "duration_ms": 0.042,
+      "duration_ms": 0.039,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "review_edit",
-      "duration_ms": 33.115,
+      "duration_ms": 18.464,
       "tokens": 0,
       "usd": 0
     },
     {
       "node": "dispatch",
-      "duration_ms": 118.503,
+      "duration_ms": 58.727,
       "tokens": 0,
       "usd": 0
     }
@@ -128,7 +128,10 @@
     "payload": {
       "job_id": "GB-001",
       "text": "Project: Build a churn prediction baseline\n\nPortfolio evidence: Compared logistic regression and random forest with a held-out split and reported precision and recall. [ai-1-case]\n\nPortfolio skills: Python, scikit-learn, classification [ai-1-case]\n\nI propose to deliver a reproducible baseline and a documented handoff.",
-      "amount": 330
+      "amount": 330,
+      "screening_answers": [
+        "I propose to validate the deliverable against agreed acceptance criteria and document the results."
+      ]
     },
     "stage": "replied"
   },

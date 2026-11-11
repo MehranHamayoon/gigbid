@@ -17,6 +17,7 @@ class Filters(BaseModel):
     skills: list[str] = Field(default_factory=list)
     type: str | None = None
     variant: str | None = None
+    exclude_synthetic: bool = False
 
 
 @mcp.tool(annotations=READ)
@@ -25,7 +26,9 @@ def search_evidence(requirement: Annotated[str, Field(min_length=1, max_length=3
                     filters: Filters | None = None) -> list[dict]:
     """Rank portfolio excerpts for a requirement and return source, date, skills and outcome."""
     f = filters or Filters()
-    rows = [row for row in load_evidence(f.persona, f.tenant) if not f.type or row["type"] == f.type]
+    rows = [row for row in load_evidence(f.persona, f.tenant)
+            if (not f.type or row["type"] == f.type)
+            and (not f.exclude_synthetic or not row["source"].startswith("Synthetic"))]
     return search(requirement, rows, k, f.skills, f.variant)
 
 
@@ -63,3 +66,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

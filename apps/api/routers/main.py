@@ -1,3 +1,4 @@
+import asyncio
 import os
 import sqlite3
 from collections import Counter
@@ -11,6 +12,7 @@ from apps.api.auth import oauth_store, session
 from apps.api.schemas.models import (
     Balance,
     Credentials,
+    GitHubImport,
     Health,
     Job,
     Message,
@@ -23,7 +25,7 @@ from apps.api.schemas.models import (
 )
 from apps.api.streaming import stream
 from mcp_servers.marketplace.server import mode
-from rag.ingest import loaders
+from rag.ingest import github, loaders
 from worker import queue
 from worker.main import config
 
@@ -256,6 +258,24 @@ async def upload(file: UploadFile = File(...), skills: str = Form(""), kind: str
         raise HTTPException(422, str(exc)) from exc
 
 
+@router.get("/portfolio/github")
+def github_status(account=Depends(session.user)):
+    return {"configured": bool(os.getenv("GITHUB_MCP_TOKEN"))}
+
+
+@router.post("/portfolio/github", status_code=201)
+async def github_import(body: GitHubImport, account=Depends(session.user)):
+    persona = account["settings"]["persona"]
+    try:
+        async with asyncio.timeout(20):
+            return await github.import_file(account["id"], "ai" if persona == "agency" else persona,
+                                            body.owner, body.repo, body.file, [tag[:50] for tag in body.skills])
+    except ValueError as exc:
+        raise HTTPException(422, str(exc)) from exc
+    except Exception as exc:
+        raise HTTPException(503, "GitHub MCP is temporarily unavailable") from exc
+
+
 @router.delete("/portfolio/{evidence_id}", status_code=204)
 def remove_portfolio(evidence_id: str, account=Depends(session.user)):
     if not loaders.delete(account["id"], evidence_id):
@@ -277,3 +297,4 @@ async def forget(kind: str, key: str, request: Request, account=Depends(session.
     if kind not in {"style", "outcome"}:
         raise HTTPException(404)
     await request.app.state.graphs["store"].adelete((account["id"], kind), key)
+

@@ -35,7 +35,7 @@ def hydrate(row):
 def enqueue(tenant, kind, job_id, settings, strategy="evidence_first"):
     run_id = uuid5(NAMESPACE_URL, f"gigbid/{tenant}/{kind}/{job_id}").hex
     state = {"user_id": tenant, "trace_id": run_id, "job_id": job_id, "persona": settings["persona"],
-             "floor": settings["floor"], "weekly_limit": settings["weekly_limit"], "strategy": strategy}
+             "floor": settings["floor"], "weekly_limit": settings["weekly_limit"], "strategy": strategy, "autonomy": settings.get("autonomy", "review")}
     with closing(db()) as conn, conn:
         conn.execute("""INSERT OR IGNORE INTO runs VALUES (?,?,?,?,?,?,NULL,NULL,NULL,0,?,?,?)""",
                      (run_id, tenant, kind, job_id, "queued", encode(state), time.time(), utc(), utc()))
@@ -100,3 +100,4 @@ def events(tenant, run_id, after=0):
         return [{"seq": row["seq"], "date": row["created"], **json.loads(row["data"])}
                 for row in conn.execute("""SELECT seq,created,data FROM events WHERE tenant=? AND run_id=? AND seq>?
                                           ORDER BY seq""", (tenant, run_id, after))]
+

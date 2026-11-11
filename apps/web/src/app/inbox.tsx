@@ -5,7 +5,7 @@ import {Badge, Empty, EvidenceHover, Header, Loading, Notice, RunLink} from '../
 import {active, api, categories, errorText, result, usd, type Job, type Run, type User} from '../lib/api/client'
 import {useLoad, useRun} from '../lib/hooks'
 
-export function Inbox({user, runs}: {user: User; runs: Run[]}) {
+export function Inbox({user, runs, marketplace, mode}: {user: User; runs: Run[]; marketplace: string; mode: string}) {
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('')
   const [filter, setFilter] = useState('all')
@@ -32,7 +32,7 @@ export function Inbox({user, runs}: {user: User; runs: Run[]}) {
     localStorage.setItem(`gigbid.saved.${user.id}`, JSON.stringify(updated))
   }
   return <>
-    <Header title="Job inbox" subtitle="Find opportunities, assess fit, and review what GigBid drafts." actions={<span className="market-label"><span/> Simulator connected</span>}/>
+    <Header title="Job inbox" subtitle="Find opportunities, assess fit, and review what GigBid drafts." actions={<span className="market-label"><span/> {marketplace === "unavailable" ? "Marketplace offline" : mode === "gigsim" ? "Simulator connected" : "Upwork connected"}</span>}/>
     <div className="metrics">
       <Metric label="Jobs in feed" value={jobs.data.length} icon={<BriefcaseBusiness size={19}/>} description="Available in the simulator"/>
       <Metric label="Ready for review" value={reviewCount} icon={<FileIcon/>} description="Proposals awaiting approval" style="peach"/>
@@ -132,4 +132,5 @@ export function JobDetail({runs, refresh}: {runs: Run[]; refresh: () => void}) {
     </>}
   </>
 }
+
 

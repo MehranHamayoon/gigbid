@@ -4,6 +4,8 @@
 
 GigBid evaluates freelance opportunities, explains fit and risk, and drafts proposals from cited portfolio evidence. The React studio shows the exact draft and its Connects cost before human approval. A second LangGraph handles simulated client replies and interview availability.
 
+[Live app](https://gigbid-nydd.onrender.com/) · [3-minute demo](https://gigbid-nydd.onrender.com/demo) · [Field notes](https://gigbid-nydd.onrender.com/field-notes)
+
 [Setup and deployment](docs/RUNBOOK.md) · [Portfolio MCP install](mcp_servers/portfolio/README.md) · [Engineering field notes](docs/TECHNICAL_WRITEUP.md) · [Reproducible results](evals/results/summary.json)
 
 ## Review the workflow
@@ -43,6 +45,8 @@ flowchart LR
 | Staged rule | 100% | Classification proxy |
 | Hand-built LangGraph | 100% | Checkpoints, interrupts, simulator writes |
 
+The full V0 and V2 end-to-end arms each received 24 replies and produced zero unsupported claims after verification. The fixture rewards the skills in the approved proposal. The measured hybrid recall improvement did not change that outcome. See [paired retrieval outcomes](evals/results/cosine_end_to_end.csv) and the [open-model study](evals/results/open_models.json).
+
 Adding a verified skill-tag citation changed the paired local simulator result from zero replies out of 24 excerpt-only proposals to 24 replies out of 24. The fixture explicitly rewards exact skill mentions. V2 shipped for its recall and lower overhead than corrective retrieval. These results describe the student-built simulator. See the [data card](docs/DATA_CARD.md) for provenance and limitations.
 
 ## Engineering
@@ -52,3 +56,5 @@ Adding a verified skill-tag citation changed the paired local simulator result f
 **Résumé**  
 Built a LangGraph and MCP freelance copilot with resumable approval and idempotent simulator writes.  
 Measured 96.7% hybrid evidence Recall@5 over 60 synthetic development jobs.
+
+

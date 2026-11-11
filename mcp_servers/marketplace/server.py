@@ -27,6 +27,7 @@ class DraftPayload(BaseModel):
     job_id: str = Field(min_length=1, max_length=100)
     text: str = Field(min_length=12, max_length=5000)
     amount: int = Field(default=0, ge=0, le=100_000)
+    screening_answers: list[str] = Field(default_factory=list, max_length=12)
 
 
 class WriteResult(BaseModel):
@@ -145,3 +146,4 @@ async def send_message(payload: DraftPayload, user_id: str, trace_id: str, idemp
                         dry_run: bool = True, approval: str = "", weekly_limit: Limit = 30) -> WriteResult:
     """Preview or send an approved response in the simulator conversation."""
     return await write("send_message", payload, user_id, trace_id, idempotency_key, dry_run, approval, weekly_limit)
+

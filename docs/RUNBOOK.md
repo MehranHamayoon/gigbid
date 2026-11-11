@@ -35,3 +35,7 @@ When the Marketplace MCP endpoint becomes unreachable, bounded retries finish wi
 ## Observability
 
 Inspect the Run timeline and its Raw trace link. Private traces use the same run ID as the Marketplace audit log. Set `LANGSMITH_TRACING=true` and a project key only for synthetic workloads if you want provider traces. Local node events mask common email and number patterns. Health status is at `/health`.
+
+## Public GitHub evidence
+
+Set a read-only token as `GITHUB_MCP_TOKEN` to enable the public GitHub import form under Portfolio evidence. The importer verifies that the repository is public before requesting the named file through the official read-only GitHub MCP endpoint. Use file types supported by the ingestion layer. The reviewer service uses the local synthetic corpus.

@@ -72,7 +72,7 @@ function Workspace() {
         {status.marketplace === 'unavailable' && <Notice><strong>Marketplace unavailable.</strong> Queued runs will retry when the connection returns.</Notice>}
         {!user.settings.onboarded ? <Settings user={user} onboarding onSave={settings => {setUser({...user,settings}); navigate('/inbox')}}/> :
         <Routes>
-          <Route path="/inbox" element={<Inbox key={user.id} user={user} runs={runs}/>}/>
+          <Route path="/inbox" element={<Inbox key={user.id} user={user} runs={runs} marketplace={status.marketplace} mode={status.mode}/>}/>
           <Route path="/jobs/:jobId" element={<JobDetail runs={runs} refresh={refresh}/>}/>
           <Route path="/studio/:runId" element={<Studio refresh={refresh}/>}/>
           <Route path="/pipeline" element={<Pipeline/>}/>
@@ -89,3 +89,4 @@ function Workspace() {
 }
 
 export default function App() {return <BrowserRouter><Workspace/></BrowserRouter>}
+

@@ -49,13 +49,14 @@ async def run(gold):
             initial = {"user_id": f"eval-{trace}", "trace_id": trace, "job_id": row["job_id"],
                        "persona": persona, "floor": 180, "weekly_limit": 100,
                        "strategy": "plan_first" if row["job_id"] == "GB-001" else "evidence_first",
-                       "include_attested_skills": kind != "excerpt_only"}
+                       "include_attested_skills": kind != "excerpt_only",
+                       "rag_variant": "v0" if kind == "v0" else "v2"}
             cfg = {"configurable": {"thread_id": trace}, "recursion_limit": 38}
             start = perf_counter()
             state = await graph.ainvoke(initial, cfg)
             analysis_ms = (perf_counter()-start)*1000
             approved = state["approval_status"] == "pending"
-            if approved and kind in {"single_persona", "excerpt_only"}:
+            if approved and kind in {"single_persona", "excerpt_only", "v0"}:
                 state = await graph.ainvoke(Command(resume={"action": "approve"}), cfg)
             proposal_ms = (perf_counter()-start)*1000 if approved else None
             if kind == "single_persona" and row["job_id"] in {"GB-001","GB-003","GB-004"}:
@@ -83,7 +84,8 @@ async def run(gold):
         for name, value in traces.items():
             write(f"trace-{name.lower()}", redact(value))
     excerpts = await asyncio.gather(*(one(row, row["persona"], "excerpt_only") for row in agency_gold))
-    return outcomes, agency, excerpts
+    cosine_baseline = await asyncio.gather(*(one(row, row["persona"], "v0") for row in gold))
+    return outcomes, agency, excerpts, cosine_baseline
 
 
 def summary(rows):
@@ -114,7 +116,7 @@ def main():
     if args.limit:
         gold = gold[:args.limit]
     rag = rag_eval.retrieval(JOBS, gold)
-    graph, agency, excerpts = asyncio.run(run(gold))
+    graph, agency, excerpts, cosine_baseline = asyncio.run(run(gold))
     tools = tool_eval.benchmark()
     docs = load_fixtures("evidence.json")
     baselines = {kind: [{**row, **decision_eval.baseline(JOBS[row["job_id"]], [doc for doc in docs if doc["persona"] == row["persona"]], kind)}
@@ -131,7 +133,7 @@ def main():
     injection = [row for row in graph[:50] if row["injection"]]
     before = sum(row["injection_decision"] for row in baselines["single_rule"])
     rows = {"mode": "Local deterministic simulator; metrics are not instructor GigSim or hidden tests",
-            "summary": summary(graph), "excerpt_only": summary(excerpts), "rag": ablation.report(rag), "architecture": architecture,
+            "summary": summary(graph), "excerpt_only": summary(excerpts), "cosine_end_to_end": summary(cosine_baseline), "rag": ablation.report(rag), "architecture": architecture,
             "tool_design": {kind: {"tasks": len(subset), "tool_accuracy": mean(row["tool_correct"] for row in subset),
                                    "tool_and_argument_accuracy": mean(row["argument_correct"] for row in subset),
                                    "mean_input_words": mean(row["input_words"] for row in subset)}
@@ -147,7 +149,7 @@ def main():
             "failures": failures, "provenance": {"rag_reranker": "local pair-feature fallback",
                                                   "model_profile": os.getenv("MODEL_PROFILE","open") if os.getenv("OLLAMA_BASE_URL") else "extractive fallback"}}
     write("summary", rows)
-    for name, values in (("job_metrics",graph),("retrieval",rag),("tool_tasks",tools),("agency",agency),("excerpt_only",excerpts)):
+    for name, values in (("job_metrics",graph),("retrieval",rag),("tool_tasks",tools),("agency",agency),("excerpt_only",excerpts),("cosine_end_to_end",cosine_baseline)):
         write(name, values)
         with (ROOT / f"evals/results/{name}.csv").open("w", newline="", encoding="utf-8") as file:
             output = csv.DictWriter(file, fieldnames=list(values[0]))
@@ -160,4 +162,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

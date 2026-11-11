@@ -795,6 +795,56 @@
         }
       }
     },
+    "/api/portfolio/github": {
+      "get": {
+        "summary": "Github Status",
+        "operationId": "github_status_api_portfolio_github_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Github Import",
+        "operationId": "github_import_api_portfolio_github_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GitHubImport"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/portfolio/{evidence_id}": {
       "delete": {
         "summary": "Remove Portfolio",
@@ -1080,6 +1130,40 @@
           "password"
         ],
         "title": "Credentials"
+      },
+      "GitHubImport": {
+        "properties": {
+          "owner": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9-]{1,39}$",
+            "title": "Owner"
+          },
+          "repo": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]{1,100}$",
+            "title": "Repo"
+          },
+          "file": {
+            "type": "string",
+            "maxLength": 250,
+            "title": "File",
+            "default": "README.md"
+          },
+          "skills": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 12,
+            "title": "Skills"
+          }
+        },
+        "type": "object",
+        "required": [
+          "owner",
+          "repo"
+        ],
+        "title": "GitHubImport"
       },
       "HTTPValidationError": {
         "properties": {
