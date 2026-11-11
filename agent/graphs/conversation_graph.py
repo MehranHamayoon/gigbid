@@ -28,7 +28,7 @@ async def send_reply(state):
 def build_conversation_graph(checkpointer=None, store=None):
     graph = StateGraph(GigBidState)
     for node in (client_liaison, message_preview, human_approval, send_reply):
-        graph.add_node(node.__name__, measured(node))
+        graph.add_node(node.__name__, measured(node, store))
     graph.add_edge(START, "client_liaison")
     graph.add_conditional_edges("client_liaison", lambda state: "message_preview" if state["approval_status"] == "drafted" else END,
                                 ["message_preview", END])
@@ -37,3 +37,4 @@ def build_conversation_graph(checkpointer=None, store=None):
                                 ["send_reply", END])
     graph.add_edge("send_reply", END)
     return graph.compile(checkpointer=checkpointer, store=store)
+

@@ -1,15 +1,11 @@
-from time import perf_counter
-from functools import wraps
 import inspect
-
-from langgraph.store.base import BaseStore
+from time import perf_counter
 
 from agent.settings import settings
 
 
-def measured(node):
-    @wraps(node)
-    async def execute(state, *, store: BaseStore):
+def measured(node, store):
+    async def execute(state):
         start = perf_counter()
         result = node(state, store=store) if "store" in inspect.signature(node).parameters else node(state)
         if inspect.isawaitable(result):
@@ -18,6 +14,7 @@ def measured(node):
         return {**result, "steps": 1,
                 "event_stats": [{"node": node.__name__, "duration_ms": round((perf_counter()-start)*1000, 3),
                                  "tokens": result.get("tokens", 0), "usd": 0, **meta}]}
+    execute.__name__ = node.__name__
     return execute
 
 
@@ -29,3 +26,5 @@ def within_budget(state):
 def budget_stop(state):
     return {"approval_status": "needs_attention",
             "compliance_verdict": {"allowed": False, "reasons": ["Run budget reached."]}}
+
+

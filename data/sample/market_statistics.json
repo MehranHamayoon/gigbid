@@ -1,0 +1,13 @@
+{
+  "dataset": "Upwork Job Postings Dataset 2024 (50K Records)",
+  "author": "asaniczka",
+  "version": 1,
+  "license": "ODC Attribution License (ODC-By)",
+  "source": "https://www.kaggle.com/datasets/asaniczka/upwork-job-postings-dataset-2024-50k-records",
+  "archive_sha256": "3f40f06c267f6429e6c9fdd9a81c0c9bb3a3c9eb85edadb1d6638394e9ce5b35",
+  "examined": 53058,
+  "fixed_price_in_range": 15203,
+  "q1": 90,
+  "median": 200,
+  "q3": 500
+}

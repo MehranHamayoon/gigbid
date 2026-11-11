@@ -4,6 +4,7 @@ from langgraph.types import Send
 
 from agent.graphs.approval import human_approval, market, proposal_tool, request
 from agent.graphs.common import budget_stop, measured, within_budget
+from agent.mcp_client import invoke
 from agent.memory.store import promote_outcome, promote_style
 from agent.nodes.analyst import analyst
 from agent.nodes.compliance import compliance, review
@@ -23,16 +24,24 @@ async def preview(state):
             "approval_status": "pending"}
 
 
-def review_edit(state):
+async def review_edit(state):
     approval = state["approval"]
     draft = dict(state["proposal_draft"])
     previous = draft["cover_letter"]
     text = approval["text"] if approval["action"] == "edit" else previous
     if text is None:
         return {"approval_status": "blocked", "compliance_verdict": {"allowed": False, "reasons": ["Missing edited text."]}}
-    verdict = review(text, state["evidence"], state["job"]["title"])
+    identifiers = {row["evidence_id"] for row in verify_claims(text, state["evidence"], state["job"]["title"])
+                   if row["status"] == "supported"}
+    fresh = []
+    for evidence_id in sorted(identifiers):
+        row = await invoke("writer", "portfolio", "get_case_study", id=evidence_id,
+                           persona=state["selected_persona"], tenant=state["user_id"])
+        if row:
+            fresh.append(row)
+    verdict = review(text, fresh, state["job"]["title"])
     draft["cover_letter"] = text
-    return {"proposal_draft": draft, "claim_verification": verify_claims(text, state["evidence"], state["job"]["title"]),
+    return {"proposal_draft": draft, "claim_verification": verify_claims(text, fresh, state["job"]["title"]),
             "compliance_verdict": verdict, "approval_status": "approved" if verdict["allowed"] else "blocked",
             "approval": {**approval, "previous": previous}}
 
@@ -53,7 +62,7 @@ def build_bid_graph(checkpointer=None, store=None):
     graph = StateGraph(GigBidState)
     for node in (scout, analyst, risk_assessor, fit_matcher, decision, pricing, writer, verifier, critic,
                  revise, compliance, preview, human_approval, review_edit, dispatch, budget_stop):
-        graph.add_node(node.__name__, measured(node))
+        graph.add_node(node.__name__, measured(node, store))
     graph.add_edge(START, "scout")
     branches = ["analyst", "risk_assessor", "fit_matcher"]
     graph.add_conditional_edges("scout", lambda state: [Send(node, state) for node in branches], branches)
@@ -78,3 +87,5 @@ def build_bid_graph(checkpointer=None, store=None):
     graph.add_edge("dispatch", END)
     graph.add_edge("budget_stop", END)
     return graph.compile(checkpointer=checkpointer, store=store)
+
+

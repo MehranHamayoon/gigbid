@@ -1,0 +1,121 @@
+profile,request,expected,selected,tool_correct,argument_correct,input_words
+fine,find work for case 1,search_jobs,get_case_study,False,False,30
+coarse,find work for case 1,search_jobs,portfolio,False,False,30
+described,find work for case 1,search_jobs,search_evidence,False,False,120
+fine,discover projects for case 2,search_jobs,get_case_study,False,False,30
+coarse,discover projects for case 2,search_jobs,portfolio,False,False,30
+described,discover projects for case 2,search_jobs,search_jobs,True,True,120
+fine,search jobs for case 3,search_jobs,search_jobs,True,True,30
+coarse,search jobs for case 3,search_jobs,marketplace,True,False,30
+described,search jobs for case 3,search_jobs,search_jobs,True,True,120
+fine,job feed for case 4,search_jobs,get_job,False,False,30
+coarse,job feed for case 4,search_jobs,marketplace,True,False,30
+described,job feed for case 4,search_jobs,search_jobs,True,True,120
+fine,open posting for case 5,get_job,get_case_study,False,False,30
+coarse,open posting for case 5,get_job,portfolio,False,False,30
+described,open posting for case 5,get_job,get_job,True,True,120
+fine,inspect brief for case 6,get_job,get_case_study,False,False,30
+coarse,inspect brief for case 6,get_job,portfolio,False,False,30
+described,inspect brief for case 6,get_job,get_job,True,True,120
+fine,get job for case 7,get_job,get_job,True,True,30
+coarse,get job for case 7,get_job,marketplace,True,False,30
+described,get job for case 7,get_job,get_job,True,True,120
+fine,load listing for case 8,get_job,get_case_study,False,False,30
+coarse,load listing for case 8,get_job,portfolio,False,False,30
+described,load listing for case 8,get_job,get_job,True,True,120
+fine,remaining credits for case 9,get_connects_balance,get_case_study,False,False,30
+coarse,remaining credits for case 9,get_connects_balance,portfolio,False,False,30
+described,remaining credits for case 9,get_connects_balance,get_connects_balance,True,True,120
+fine,tokens left for case 10,get_connects_balance,get_case_study,False,False,30
+coarse,tokens left for case 10,get_connects_balance,portfolio,False,False,30
+described,tokens left for case 10,get_connects_balance,get_connects_balance,True,True,120
+fine,get connects balance for case 11,get_connects_balance,get_connects_balance,True,True,31
+coarse,get connects balance for case 11,get_connects_balance,marketplace,True,False,31
+described,get connects balance for case 11,get_connects_balance,get_connects_balance,True,True,121
+fine,available connects for case 12,get_connects_balance,get_connects_balance,True,True,30
+coarse,available connects for case 12,get_connects_balance,marketplace,True,False,30
+described,available connects for case 12,get_connects_balance,get_connects_balance,True,True,120
+fine,buyer reputation for case 13,get_client_history,get_case_study,False,False,30
+coarse,buyer reputation for case 13,get_client_history,portfolio,False,False,30
+described,buyer reputation for case 13,get_client_history,get_client_history,True,True,120
+fine,payment verification for case 14,get_client_history,get_case_study,False,False,30
+coarse,payment verification for case 14,get_client_history,portfolio,False,False,30
+described,payment verification for case 14,get_client_history,get_client_history,True,True,120
+fine,get client history for case 15,get_client_history,get_client_history,True,True,31
+coarse,get client history for case 15,get_client_history,marketplace,True,False,31
+described,get client history for case 15,get_client_history,get_client_history,True,True,121
+fine,past spend for case 16,get_client_history,get_case_study,False,False,30
+coarse,past spend for case 16,get_client_history,portfolio,False,False,30
+described,past spend for case 16,get_client_history,get_client_history,True,True,120
+fine,incoming replies for case 17,list_messages,get_case_study,False,False,30
+coarse,incoming replies for case 17,list_messages,portfolio,False,False,30
+described,incoming replies for case 17,list_messages,list_messages,True,True,120
+fine,client inbox for case 18,list_messages,get_client_history,False,False,30
+coarse,client inbox for case 18,list_messages,marketplace,True,False,30
+described,client inbox for case 18,list_messages,list_messages,True,True,120
+fine,list messages for case 19,list_messages,list_messages,True,True,30
+coarse,list messages for case 19,list_messages,marketplace,True,False,30
+described,list messages for case 19,list_messages,list_messages,True,True,120
+fine,show conversations for case 20,list_messages,get_case_study,False,False,30
+coarse,show conversations for case 20,list_messages,portfolio,False,False,30
+described,show conversations for case 20,list_messages,list_messages,True,True,120
+fine,relevant proof for case 21,search_evidence,get_case_study,False,False,30
+coarse,relevant proof for case 21,search_evidence,portfolio,True,False,30
+described,relevant proof for case 21,search_evidence,search_evidence,True,True,120
+fine,matching case studies for case 22,search_evidence,get_case_study,False,False,31
+coarse,matching case studies for case 22,search_evidence,portfolio,True,False,31
+described,matching case studies for case 22,search_evidence,search_evidence,True,True,121
+fine,search evidence for case 23,search_evidence,search_evidence,True,True,30
+coarse,search evidence for case 23,search_evidence,portfolio,True,False,30
+described,search evidence for case 23,search_evidence,search_evidence,True,True,120
+fine,find past work for case 24,search_evidence,get_case_study,False,False,31
+coarse,find past work for case 24,search_evidence,portfolio,True,False,31
+described,find past work for case 24,search_evidence,search_evidence,True,True,121
+fine,read exact excerpt for case 25,get_case_study,get_case_study,True,True,31
+coarse,read exact excerpt for case 25,get_case_study,portfolio,True,False,31
+described,read exact excerpt for case 25,get_case_study,get_case_study,True,True,121
+fine,inspect citation for case 26,get_case_study,get_case_study,True,True,30
+coarse,inspect citation for case 26,get_case_study,portfolio,True,False,30
+described,inspect citation for case 26,get_case_study,get_case_study,True,True,120
+fine,get case study for case 27,get_case_study,get_case_study,True,True,31
+coarse,get case study for case 27,get_case_study,portfolio,True,False,31
+described,get case study for case 27,get_case_study,get_case_study,True,True,121
+fine,open evidence for case 28,get_case_study,search_evidence,False,False,30
+coarse,open evidence for case 28,get_case_study,portfolio,True,False,30
+described,open evidence for case 28,get_case_study,get_case_study,True,True,120
+fine,show capabilities for case 29,list_skills,get_case_study,False,False,30
+coarse,show capabilities for case 29,list_skills,portfolio,True,False,30
+described,show capabilities for case 29,list_skills,list_skills,True,True,120
+fine,inventory competencies for case 30,list_skills,get_case_study,False,False,30
+coarse,inventory competencies for case 30,list_skills,portfolio,True,False,30
+described,inventory competencies for case 30,list_skills,list_skills,True,True,120
+fine,list skills for case 31,list_skills,list_skills,True,True,30
+coarse,list skills for case 31,list_skills,portfolio,True,False,30
+described,list skills for case 31,list_skills,list_skills,True,True,120
+fine,attested skills for case 32,list_skills,get_case_study,False,False,30
+coarse,attested skills for case 32,list_skills,portfolio,True,False,30
+described,attested skills for case 32,list_skills,list_skills,True,True,120
+fine,interview availability for case 33,free_calendar_slots,get_case_study,False,False,30
+coarse,interview availability for case 33,free_calendar_slots,portfolio,False,False,30
+described,interview availability for case 33,free_calendar_slots,free_calendar_slots,True,True,120
+fine,find times for case 34,free_calendar_slots,get_case_study,False,False,30
+coarse,find times for case 34,free_calendar_slots,portfolio,False,False,30
+described,find times for case 34,free_calendar_slots,search_evidence,False,False,120
+fine,free calendar slots for case 35,free_calendar_slots,free_calendar_slots,True,True,31
+coarse,free calendar slots for case 35,free_calendar_slots,workspace,True,False,31
+described,free calendar slots for case 35,free_calendar_slots,free_calendar_slots,True,True,121
+fine,schedule options for case 36,free_calendar_slots,get_case_study,False,False,30
+coarse,schedule options for case 36,free_calendar_slots,portfolio,False,False,30
+described,schedule options for case 36,free_calendar_slots,free_calendar_slots,True,True,120
+fine,prepare email for case 37,create_email_draft,get_case_study,False,False,30
+coarse,prepare email for case 37,create_email_draft,portfolio,False,False,30
+described,prepare email for case 37,create_email_draft,create_email_draft,True,True,120
+fine,save unsent message for case 38,create_email_draft,get_case_study,False,False,31
+coarse,save unsent message for case 38,create_email_draft,portfolio,False,False,31
+described,save unsent message for case 38,create_email_draft,create_email_draft,True,True,121
+fine,create email draft for case 39,create_email_draft,create_email_draft,True,True,31
+coarse,create email draft for case 39,create_email_draft,workspace,True,False,31
+described,create email draft for case 39,create_email_draft,create_email_draft,True,True,121
+fine,compose a note for case 40,create_email_draft,get_case_study,False,False,31
+coarse,compose a note for case 40,create_email_draft,portfolio,False,False,31
+described,compose a note for case 40,create_email_draft,create_email_draft,True,True,121

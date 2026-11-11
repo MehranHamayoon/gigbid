@@ -1,0 +1,49 @@
+{
+  "job_id": "GB-004",
+  "trace_id": "a69d9cac831848cabff0a5092cb3cec4",
+  "events": [
+    {
+      "node": "scout",
+      "duration_ms": 122.403,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "analyst",
+      "duration_ms": 0.04,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "risk_assessor",
+      "duration_ms": 149.766,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "fit_matcher",
+      "duration_ms": 149.478,
+      "tokens": 0,
+      "usd": 0
+    },
+    {
+      "node": "decision",
+      "duration_ms": 0.029,
+      "tokens": 0,
+      "usd": 0
+    }
+  ],
+  "decision": {
+    "action": "skip",
+    "reason": "Flagged injection."
+  },
+  "risk": {
+    "score": 0.77,
+    "flags": [
+      "injection"
+    ],
+    "explanation": "Flagged injection."
+  },
+  "outcome": null,
+  "claim_verification": null
+}
